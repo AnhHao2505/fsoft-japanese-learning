@@ -28,21 +28,24 @@ export default function Sidebar({ courses, activeCourse, onSelectCourse, lessons
 
   return (
     <aside className="sidebar">
-      <div className="sidebar-header">
-        <div className="sidebar-logo">
-          <div className="logo-icon">🎌</div>
-          <h1>
-            日本語学習
-            <span>Japanese Learning</span>
-          </h1>
-        </div>
+      <div className="sidebar-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '32px 24px 24px', background: 'var(--bg-card)', borderBottom: '1px solid var(--border)' }}>
+        <h1 style={{ fontWeight: 600, fontSize: '1.4rem', color: 'var(--text-main)', margin: '0 0 16px 0' }}>
+          Japanese Learning
+        </h1>
+        {courses.length === 1 && (
+          <h2 style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', margin: 0, fontWeight: 500 }}>
+            {activeCourse?.name}
+          </h2>
+        )}
       </div>
 
-      <CourseSelector
-        courses={courses}
-        activeCourse={activeCourse}
-        onSelectCourse={onSelectCourse}
-      />
+      {courses.length > 1 && (
+        <CourseSelector
+          courses={courses}
+          activeCourse={activeCourse}
+          onSelectCourse={onSelectCourse}
+        />
+      )}
 
       <div className="sidebar-search-area">
         <div className="sidebar-search">

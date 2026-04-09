@@ -1,67 +1,5 @@
 [
   {
-    "id": "fpt-software",
-    "name": "FPT Software",
-    "nameJp": "FPTソフトウェア",
-    "description": "Khóa học tiếng Nhật N3 dành cho nhân viên FPT Software, tập trung vào giao tiếp công sở và thuật ngữ IT.",
-    "level": "N3",
-    "icon": "🏢",
-    "lessons": [
-      {
-        "id": 1,
-        "title": "Chào hỏi cơ bản",
-        "titleJp": "基本的な挨拶",
-        "category": "Giao tiếp",
-        "level": "N5",
-        "content": "Bài học về các câu chào hỏi cơ bản trong tiếng Nhật, thường dùng hàng ngày tại công ty FPT Software.",
-        "vocabulary": [
-          {
-            "word": "おはようございます",
-            "reading": "ohayou gozaimasu",
-            "meaning": "Xin chào (buổi sáng)"
-          },
-          {
-            "word": "お疲れ様でした",
-            "reading": "otsukaresama deshita",
-            "meaning": "Cảm ơn vì đã làm việc vất vả"
-          }
-        ],
-        "grammar": [
-          "~です (desu): Copula lịch sự, tương đương 'là'"
-        ],
-        "examples": [
-          "おはようございます。今日もよろしくお願いします。 → Chào buổi sáng. Hôm nay cũng xin hãy giúp đỡ nhé."
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Tại công ty - Từ vựng IT",
-        "titleJp": "会社で - IT用語",
-        "category": "Từ vựng",
-        "level": "N4",
-        "content": "Làm việc tại FPT Software với khách hàng Nhật, bạn sẽ thường xuyên gặp các thuật ngữ IT được 'Nhật hóa'.",
-        "vocabulary": [
-          {
-            "word": "開発",
-            "reading": "kaihatsu",
-            "meaning": "Phát triển"
-          },
-          {
-            "word": "バグ",
-            "reading": "bagu",
-            "meaning": "Lỗi (Bug)"
-          }
-        ],
-        "grammar": [
-          "～を開発する (~wo kaihatsu suru): Phát triển ~"
-        ],
-        "examples": [
-          "このバグを修正してください。 → Xin hãy sửa bug này."
-        ]
-      }
-    ]
-  },
-  {
     "id": "jpd316",
     "name": "JPD316-FPT",
     "nameJp": "JPD316",
@@ -72,7 +10,7 @@
       {
         "id": 101,
         "title": "~移動 Vている",
-        "titleJp": "~移動 Vている",
+        "titleJp": "Đang (Kết quả hành động)",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Đang (Kết quả hành động)",
@@ -87,7 +25,7 @@
       {
         "id": 102,
         "title": "~によって",
-        "titleJp": "~によって",
+        "titleJp": "Bởi... / Dựa theo...",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Bởi... / Dựa theo...",
@@ -102,7 +40,7 @@
       {
         "id": 103,
         "title": "Vているところだ",
-        "titleJp": "Vているところだ",
+        "titleJp": "Đang xảy ra giữa chừng",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Đang xảy ra giữa chừng",
@@ -117,7 +55,7 @@
       {
         "id": 104,
         "title": "Vたところだ",
-        "titleJp": "Vたところだ",
+        "titleJp": "Vừa mới làm xong",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Vừa mới làm xong",
@@ -132,7 +70,7 @@
       {
         "id": 105,
         "title": "Vる/ないところだった",
-        "titleJp": "Vる/ないところだった",
+        "titleJp": "Suýt nữa thì...",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Suýt nữa thì...",
@@ -147,7 +85,7 @@
       {
         "id": 106,
         "title": "V普通形 + ところに",
-        "titleJp": "V普通形 + ところに",
+        "titleJp": "Đúng lúc đang xảy ra thì...",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Đúng lúc đang xảy ra thì...",
@@ -162,7 +100,7 @@
       {
         "id": 107,
         "title": "Vている/た + ところを",
-        "titleJp": "Vている/た + ところを",
+        "titleJp": "Đang lúc (bị tác động)",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Đang lúc (bị tác động)",
@@ -177,7 +115,7 @@
       {
         "id": 108,
         "title": "ところが",
-        "titleJp": "ところが",
+        "titleJp": "Nhưng mà (trái dự đoán)",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Nhưng mà (trái dự đoán)",
@@ -192,7 +130,7 @@
       {
         "id": 109,
         "title": "ところで",
-        "titleJp": "ところで",
+        "titleJp": "Nhân tiện (đổi chủ đề)",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Nhân tiện (đổi chủ đề)",
@@ -207,7 +145,7 @@
       {
         "id": 110,
         "title": "〜につれて",
-        "titleJp": "〜につれて",
+        "titleJp": "Càng... Càng...",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Càng... Càng...",
@@ -222,7 +160,7 @@
       {
         "id": 111,
         "title": "～ものだ",
-        "titleJp": "～ものだ",
+        "titleJp": "Quy luật / Chuẩn mực",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Quy luật / Chuẩn mực",
@@ -237,7 +175,7 @@
       {
         "id": 112,
         "title": "Vた + ものだ",
-        "titleJp": "Vた + ものだ",
+        "titleJp": "Hồi đó thường...",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Hồi đó thường...",
@@ -252,7 +190,7 @@
       {
         "id": 113,
         "title": "Cảm thán ～ものだ",
-        "titleJp": "Cảm thán ～ものだ",
+        "titleJp": "Thật là / Đúng là",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Thật là / Đúng là",
@@ -267,7 +205,7 @@
       {
         "id": 114,
         "title": "～通り（に）",
-        "titleJp": "～通り（に）",
+        "titleJp": "Đúng như / Theo như",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Đúng như / Theo như",
@@ -282,7 +220,7 @@
       {
         "id": 115,
         "title": "～際（さい）",
-        "titleJp": "～際（さい）",
+        "titleJp": "Khi / Lúc (trang trọng)",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Khi / Lúc (trang trọng)",
@@ -297,7 +235,7 @@
       {
         "id": 116,
         "title": "～こと",
-        "titleJp": "～こと",
+        "titleJp": "Chỉ thị / Mệnh lệnh",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Chỉ thị / Mệnh lệnh",
@@ -312,7 +250,7 @@
       {
         "id": 117,
         "title": "～ことだ",
-        "titleJp": "～ことだ",
+        "titleJp": "Lời khuyên (nên/không nên)",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Lời khuyên (nên/không nên)",
@@ -327,7 +265,7 @@
       {
         "id": 118,
         "title": "N/A + ことだ",
-        "titleJp": "N/A + ことだ",
+        "titleJp": "Cảm thán",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Cảm thán",
@@ -342,7 +280,7 @@
       {
         "id": 119,
         "title": "〜まま",
-        "titleJp": "〜まま",
+        "titleJp": "Cứ để nguyên như vậy",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Cứ để nguyên như vậy",
@@ -357,7 +295,7 @@
       {
         "id": 120,
         "title": "〜だらけ",
-        "titleJp": "〜だらけ",
+        "titleJp": "Đầy toàn là (tiêu cực)",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Đầy toàn là (tiêu cực)",
@@ -372,7 +310,7 @@
       {
         "id": 121,
         "title": "～まみれ",
-        "titleJp": "～まみれ",
+        "titleJp": "Dính đầy",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Dính đầy",
@@ -387,7 +325,7 @@
       {
         "id": 122,
         "title": "〜でいっぱい",
-        "titleJp": "〜でいっぱい",
+        "titleJp": "Đầy / Tràn đầy",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Đầy / Tràn đầy",
@@ -402,7 +340,7 @@
       {
         "id": 123,
         "title": "〜ばかり",
-        "titleJp": "〜ばかり",
+        "titleJp": "Toàn là (phàn nàn)",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Toàn là (phàn nàn)",
@@ -417,7 +355,7 @@
       {
         "id": 124,
         "title": "～にかかわらず",
-        "titleJp": "～にかかわらず",
+        "titleJp": "Bất kể / Không liên quan",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Bất kể / Không liên quan",
@@ -432,7 +370,7 @@
       {
         "id": 125,
         "title": "～次第（しだい）",
-        "titleJp": "～次第（しだい）",
+        "titleJp": "Vừa xong là sẽ",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Vừa xong là sẽ",
@@ -447,7 +385,7 @@
       {
         "id": 126,
         "title": "〜途中（で/に）",
-        "titleJp": "〜途中（で/に）",
+        "titleJp": "Giữa chừng",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Giữa chừng",
@@ -462,7 +400,7 @@
       {
         "id": 127,
         "title": "~として",
-        "titleJp": "~として",
+        "titleJp": "Xem như là / Lấy làm",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Xem như là / Lấy làm",
@@ -477,7 +415,7 @@
       {
         "id": 128,
         "title": "〜を背にして",
-        "titleJp": "〜を背にして",
+        "titleJp": "Xoay lưng về / Lấy làm mốc",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Xoay lưng về / Lấy làm mốc",
@@ -492,7 +430,7 @@
       {
         "id": 129,
         "title": "~に沿って",
-        "titleJp": "~に沿って",
+        "titleJp": "Men theo / Dọc theo",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: Men theo / Dọc theo",
@@ -507,7 +445,7 @@
       {
         "id": 130,
         "title": "〜おそれがある",
-        "titleJp": "〜おそれがある",
+        "titleJp": "E là / Có lẽ (tiêu cực)",
         "category": "Ngữ pháp",
         "level": "N3",
         "content": "Ý nghĩa: E là / Có lẽ (tiêu cực)",
