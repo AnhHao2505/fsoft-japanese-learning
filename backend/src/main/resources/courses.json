@@ -15,8 +15,16 @@
         "level": "N5",
         "content": "Bài học về các câu chào hỏi cơ bản trong tiếng Nhật, thường dùng hàng ngày tại công ty FPT Software.",
         "vocabulary": [
-          { "word": "おはようございます", "reading": "ohayou gozaimasu", "meaning": "Xin chào (buổi sáng)" },
-          { "word": "お疲れ様でした", "reading": "otsukaresama deshita", "meaning": "Cảm ơn vì đã làm việc vất vả" }
+          {
+            "word": "おはようございます",
+            "reading": "ohayou gozaimasu",
+            "meaning": "Xin chào (buổi sáng)"
+          },
+          {
+            "word": "お疲れ様でした",
+            "reading": "otsukaresama deshita",
+            "meaning": "Cảm ơn vì đã làm việc vất vả"
+          }
         ],
         "grammar": [
           "~です (desu): Copula lịch sự, tương đương 'là'"
@@ -33,8 +41,16 @@
         "level": "N4",
         "content": "Làm việc tại FPT Software với khách hàng Nhật, bạn sẽ thường xuyên gặp các thuật ngữ IT được 'Nhật hóa'.",
         "vocabulary": [
-          { "word": "開発", "reading": "kaihatsu", "meaning": "Phát triển" },
-          { "word": "バグ", "reading": "bagu", "meaning": "Lỗi (Bug)" }
+          {
+            "word": "開発",
+            "reading": "kaihatsu",
+            "meaning": "Phát triển"
+          },
+          {
+            "word": "バグ",
+            "reading": "bagu",
+            "meaning": "Lỗi (Bug)"
+          }
         ],
         "grammar": [
           "～を開発する (~wo kaihatsu suru): Phát triển ~"
@@ -55,101 +71,451 @@
     "lessons": [
       {
         "id": 101,
-        "title": "Cấu trúc với ところ",
-        "titleJp": "「ところ」の文法",
+        "title": "~移動 Vている",
+        "titleJp": "~移動 Vている",
         "category": "Ngữ pháp",
         "level": "N3",
-        "content": "Bài học này nhóm các cấu trúc ngữ pháp liên quan đến ところ, diễn tả một hành động đang ở thời điểm nào (chuẩn bị, đang làm, vừa xong) hoặc chuyển đổi mạch câu chuyện.",
+        "content": "Ý nghĩa: Đang (Kết quả hành động)",
         "vocabulary": [],
         "grammar": [
-          "Vている + ところだ: Đang xảy ra giữa chừng",
-          "Vた + ところだ: Vừa mới làm xong",
-          "Vる / Vない + ところだった: Suýt nữa thì…",
-          "V普通形 + ところに/へ: Đúng lúc đang xảy ra thì B xảy ra đến",
-          "Vている/た + ところを: Đang lúc (bị phát hiện, bị bắt...)",
-          "A。ところが、B: Tuy nhiên, nhưng mà (kết quả trái dự đoán)",
-          "ところで: Nhân tiện, đổi chủ đề câu chuyện"
+          "~移動 Vている: Đang (Kết quả hành động)"
         ],
         "examples": [
-          "今ご飯を食べているところです。 → Tôi đang ăn cơm.",
-          "今帰ったところです。 → Tôi vừa mới về.",
-          "危ない！もう少しで事故になるところだった。 → Suýt nữa thì xảy ra tai nạn.",
-          "電話しているところに、友達が来た。 → Đúng lúc đang gọi điện thì bạn đến.",
-          "昨夜コンサートに行くつもりだった。ところが、病気でいけなくなった。 → Tối qua tôi định đi hòa nhạc. Nhưng bị bệnh nên không đi được."
+          "今日、私は駅の前にできた新しいデパートに来ています。 → Hôm nay tôi đang có mặt ở trung tâm thương mại mới mở trước ga."
         ]
       },
       {
         "id": 102,
-        "title": "Cấu trúc với もの và こと",
-        "titleJp": "「もの・こと」の文法",
+        "title": "~によって",
+        "titleJp": "~によって",
         "category": "Ngữ pháp",
         "level": "N3",
-        "content": "Hệ thống các ngữ pháp mang tính trừu tượng liên quan đến もの (vốn dĩ, bản chất) và こと (mệnh lệnh, việc trừu tượng).",
+        "content": "Ý nghĩa: Bởi... / Dựa theo...",
         "vocabulary": [],
         "grammar": [
-          "～ものだ: Quy luật tự nhiên / điều hiển nhiên / chuẩn mực phải tuân theo",
-          "Vた + ものだ: Hồi xưa, ngày xưa thường... (hồi tưởng)",
-          "Cảm thán ～ものだ: Thật là, đúng là (thể hiện cảm xúc mạnh)",
-          "～こと: Dùng để viết luật hoặc chỉ thị",
-          "～ことだ: Lời khuyên (nên/không nên)",
-          "N・A + ことだ: Cảm thán (thật là...)"
+          "~によって: Bởi... / Dựa theo..."
         ],
         "examples": [
-          "若い人はお年寄りに席を譲るものだ。 → Người trẻ nên nhường ghế cho người già.",
-          "学生のころはよくこの店でラーメンを食べたものだ。 → Hồi còn sinh viên tôi thường ăn ramen ở quán này.",
-          "時間がたつのは早いものだ。 → Thời gian trôi nhanh thật.",
-          "教室では携帯電話を使わないこと。 → Không được dùng điện thoại trong lớp.",
-          "疲れているなら早く寝ることだ。 → Nếu mệt thì nên ngủ sớm.",
-          "そんな良いチャンスを逃すのはとてももったいないことだ。 → Bỏ lỡ cơ hội tốt như vậy thật đáng tiếc."
+          "この建物はベトナムの有名な建築家によって設計されたそうです。 → Tòa nhà này nghe nói được thiết kế bởi một kiến trúc sư nổi tiếng của Việt Nam."
         ]
       },
       {
         "id": 103,
-        "title": "Chỉ phương thức, trạng thái",
-        "titleJp": "方法・状態を表す",
+        "title": "Vているところだ",
+        "titleJp": "Vているところだ",
         "category": "Ngữ pháp",
         "level": "N3",
-        "content": "Các mẫu câu dùng để thể hiện trạng thái (giữ nguyên, đầy rẫy) hoặc để chỉ mốc thời gian, diễn biến.",
+        "content": "Ý nghĩa: Đang xảy ra giữa chừng",
         "vocabulary": [],
         "grammar": [
-          "～通り（に）: Giống như, đúng như",
-          "～際（さい）: Khi, lúc, trong trường hợp (hay dùng trong thông báo)",
-          "～まま: Cứ để nguyên như thế, không đổi",
-          "～だらけ: Đầy, toàn là... (nghĩa tiêu cực, như xước xát, lỗi)",
-          "～まみれ: Dính đầy (bùn, đất...)",
-          "N + ばかり / Vて + ばかり: Toàn chỉ (thường mang ý phàn nàn)"
+          "Vているところだ: Đang xảy ra giữa chừng"
         ],
         "examples": [
-          "説明した通りにやってください。 → Hãy làm đúng như đã giải thích.",
-          "海外へ行く際には、パスポートを忘れないでください。 → Khi ra nước ngoài, đừng quên hộ chiếu.",
-          "思ったままの気持ちや感想をお伝えします。 → Tôi sẽ truyền đạt lại đúng như những gì tôi cảm nhận.",
-          "このレポートは間違いだらけで読みにくい。 → Báo cáo này toàn là lỗi sai, rất khó đọc.",
-          "弟はゲームをしてばかりいる。 → Em trai tôi chỉ toàn chơi game."
+          "今ご飯を食べているところです。 → Tôi đang ăn cơm."
         ]
       },
       {
         "id": 104,
-        "title": "Mẫu câu N3 bổ sung (Theo file JPD316)",
-        "titleJp": "N3その他の文法",
+        "title": "Vたところだ",
+        "titleJp": "Vたところだ",
         "category": "Ngữ pháp",
         "level": "N3",
-        "content": "Tổng hợp các mẫu ngữ pháp xuất hiện bổ sung trong chương trình luyện thi.",
+        "content": "Ý nghĩa: Vừa mới làm xong",
         "vocabulary": [],
         "grammar": [
-          "~移動 Vている: Diễn tả kết quả của hành động sau khi chuyển động (Đang ở đó)",
-          "～によって: Bởi, dựa theo, tùy vào, nhờ vào, do",
-          "～にかかわらず / ～にかかわりなく: Bất kể, không liên quan đến",
-          "～次第（しだい）: Vừa xong là sẽ... (Ngay sau khi)",
-          "〜途中（で / に）: Giữa chừng đang làm việc gì đó",
-          "~として: Lấy N1 làm N2 / xem N1 là N2",
-          "〜おそれがある: E là, có lẽ... (Dự báo tình huống xấu)"
+          "Vたところだ: Vừa mới làm xong"
         ],
         "examples": [
-          "今日、私は駅の前にできた新しいデパートに来ています。 → Hôm nay tôi đang có mặt ở trung tâm thương mại mới mở trước ga.",
-          "この建物はベトナムの有名な建築家によって設計されたそうです。 → Tòa nhà này nghe nói được thiết kế bởi một kiến trúc sư nổi tiếng của Việt Nam.",
-          "天気にかかわらず、試合はおこなわれます。 → Bất kể thời tiết thế nào trận đấu vẫn sẽ diễn ra.",
-          "来週の予定が決まり次第、すぐお知らせします。 → Khi lịch tuần sau chốt xong, tôi sẽ thông báo ngay.",
-          "昨日バイトに行く途中で、山田先生と会いました。 → Hôm qua trên đường đi làm thêm thì gặp thầy Yamada.",
+          "今帰ったところです。 → Tôi vừa mới về."
+        ]
+      },
+      {
+        "id": 105,
+        "title": "Vる/ないところだった",
+        "titleJp": "Vる/ないところだった",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Suýt nữa thì...",
+        "vocabulary": [],
+        "grammar": [
+          "Vる/ないところだった: Suýt nữa thì..."
+        ],
+        "examples": [
+          "危ない！もう少しで事故になるところだった。 → Suýt nữa thì xảy ra tai nạn."
+        ]
+      },
+      {
+        "id": 106,
+        "title": "V普通形 + ところに",
+        "titleJp": "V普通形 + ところに",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Đúng lúc đang xảy ra thì...",
+        "vocabulary": [],
+        "grammar": [
+          "V普通形 + ところに: Đúng lúc đang xảy ra thì..."
+        ],
+        "examples": [
+          "出かけようとしたところに、客がやってきた。 → Đúng lúc định ra ngoài thì khách đến."
+        ]
+      },
+      {
+        "id": 107,
+        "title": "Vている/た + ところを",
+        "titleJp": "Vている/た + ところを",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Đang lúc (bị tác động)",
+        "vocabulary": [],
+        "grammar": [
+          "Vている/た + ところを: Đang lúc (bị tác động)"
+        ],
+        "examples": [
+          "逃げようとしたところを警察に捕まえられた。 → Đang định chạy trốn thì bị cảnh sát bắt."
+        ]
+      },
+      {
+        "id": 108,
+        "title": "ところが",
+        "titleJp": "ところが",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Nhưng mà (trái dự đoán)",
+        "vocabulary": [],
+        "grammar": [
+          "ところが: Nhưng mà (trái dự đoán)"
+        ],
+        "examples": [
+          "昨夜コンサートに行くつもりだった。ところが、病気でいけなくなった。 → Tối qua tôi định đi hòa nhạc. Nhưng bị bệnh nên không đi được."
+        ]
+      },
+      {
+        "id": 109,
+        "title": "ところで",
+        "titleJp": "ところで",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Nhân tiện (đổi chủ đề)",
+        "vocabulary": [],
+        "grammar": [
+          "ところで: Nhân tiện (đổi chủ đề)"
+        ],
+        "examples": [
+          "もうすぐ、今年も終わりですね。ところで、お正月はどうなさいますか。 → Sắp hết năm rồi nhỉ. Nhân tiện, tết này thế nào?"
+        ]
+      },
+      {
+        "id": 110,
+        "title": "〜につれて",
+        "titleJp": "〜につれて",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Càng... Càng...",
+        "vocabulary": [],
+        "grammar": [
+          "〜につれて: Càng... Càng..."
+        ],
+        "examples": [
+          "お金持ちになるにつれて、彼はますます欲深くなった。 → Càng giàu lên, anh ta càng tham lam."
+        ]
+      },
+      {
+        "id": 111,
+        "title": "～ものだ",
+        "titleJp": "～ものだ",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Quy luật / Chuẩn mực",
+        "vocabulary": [],
+        "grammar": [
+          "～ものだ: Quy luật / Chuẩn mực"
+        ],
+        "examples": [
+          "若い人はお年寄りに席を譲るものだ。 → Người trẻ nên nhường ghế cho người già."
+        ]
+      },
+      {
+        "id": 112,
+        "title": "Vた + ものだ",
+        "titleJp": "Vた + ものだ",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Hồi đó thường...",
+        "vocabulary": [],
+        "grammar": [
+          "Vた + ものだ: Hồi đó thường..."
+        ],
+        "examples": [
+          "学生のころはよくこの店でラーメンを食べたものだ。 → Hồi sinh viên tôi thường ăn ramen ở quán này."
+        ]
+      },
+      {
+        "id": 113,
+        "title": "Cảm thán ～ものだ",
+        "titleJp": "Cảm thán ～ものだ",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Thật là / Đúng là",
+        "vocabulary": [],
+        "grammar": [
+          "Cảm thán ～ものだ: Thật là / Đúng là"
+        ],
+        "examples": [
+          "時間がたつのは早いものだ。 → Thời gian trôi nhanh thật."
+        ]
+      },
+      {
+        "id": 114,
+        "title": "～通り（に）",
+        "titleJp": "～通り（に）",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Đúng như / Theo như",
+        "vocabulary": [],
+        "grammar": [
+          "～通り（に）: Đúng như / Theo như"
+        ],
+        "examples": [
+          "説明した通りにやってください。 → Hãy làm đúng như đã giải thích."
+        ]
+      },
+      {
+        "id": 115,
+        "title": "～際（さい）",
+        "titleJp": "～際（さい）",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Khi / Lúc (trang trọng)",
+        "vocabulary": [],
+        "grammar": [
+          "～際（さい）: Khi / Lúc (trang trọng)"
+        ],
+        "examples": [
+          "海外へ行く際には、パスポートを忘れないでください。 → Khi ra nước ngoài, đừng quên hộ chiếu."
+        ]
+      },
+      {
+        "id": 116,
+        "title": "～こと",
+        "titleJp": "～こと",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Chỉ thị / Mệnh lệnh",
+        "vocabulary": [],
+        "grammar": [
+          "～こと: Chỉ thị / Mệnh lệnh"
+        ],
+        "examples": [
+          "教室では携帯電話を使わないこと。 → Không được dùng điện thoại trong lớp."
+        ]
+      },
+      {
+        "id": 117,
+        "title": "～ことだ",
+        "titleJp": "～ことだ",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Lời khuyên (nên/không nên)",
+        "vocabulary": [],
+        "grammar": [
+          "～ことだ: Lời khuyên (nên/không nên)"
+        ],
+        "examples": [
+          "疲れているなら早く寝ることだ。 → Nếu mệt thì nên ngủ sớm."
+        ]
+      },
+      {
+        "id": 118,
+        "title": "N/A + ことだ",
+        "titleJp": "N/A + ことだ",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Cảm thán",
+        "vocabulary": [],
+        "grammar": [
+          "N/A + ことだ: Cảm thán"
+        ],
+        "examples": [
+          "そんな良いチャンスを逃すのはとてももったいないことだ。 → Bỏ lỡ cơ hội tốt thế thật đáng tiếc."
+        ]
+      },
+      {
+        "id": 119,
+        "title": "〜まま",
+        "titleJp": "〜まま",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Cứ để nguyên như vậy",
+        "vocabulary": [],
+        "grammar": [
+          "〜まま: Cứ để nguyên như vậy"
+        ],
+        "examples": [
+          "思ったままの気持ちや感想をお伝えします。 → Tôi sẽ truyền đạt lại đúng như cảm nhận."
+        ]
+      },
+      {
+        "id": 120,
+        "title": "〜だらけ",
+        "titleJp": "〜だらけ",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Đầy toàn là (tiêu cực)",
+        "vocabulary": [],
+        "grammar": [
+          "〜だらけ: Đầy toàn là (tiêu cực)"
+        ],
+        "examples": [
+          "このレポートは間違いだらけで読みにくい。 → Báo cáo này toàn là lỗi sai, rất khó đọc."
+        ]
+      },
+      {
+        "id": 121,
+        "title": "～まみれ",
+        "titleJp": "～まみれ",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Dính đầy",
+        "vocabulary": [],
+        "grammar": [
+          "～まみれ: Dính đầy"
+        ],
+        "examples": [
+          "息子が泥まみれになって帰ってきた。 → Con trai tôi về dính đầy bùn."
+        ]
+      },
+      {
+        "id": 122,
+        "title": "〜でいっぱい",
+        "titleJp": "〜でいっぱい",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Đầy / Tràn đầy",
+        "vocabulary": [],
+        "grammar": [
+          "〜でいっぱい: Đầy / Tràn đầy"
+        ],
+        "examples": [
+          "人生はつらいことでいっぱいだ。 → Cuộc đời đầy rẫy sự vất vả."
+        ]
+      },
+      {
+        "id": 123,
+        "title": "〜ばかり",
+        "titleJp": "〜ばかり",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Toàn là (phàn nàn)",
+        "vocabulary": [],
+        "grammar": [
+          "〜ばかり: Toàn là (phàn nàn)"
+        ],
+        "examples": [
+          "弟はゲームをしてばかりいる。 → Em trai tôi chỉ toàn chơi game."
+        ]
+      },
+      {
+        "id": 124,
+        "title": "～にかかわらず",
+        "titleJp": "～にかかわらず",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Bất kể / Không liên quan",
+        "vocabulary": [],
+        "grammar": [
+          "～にかかわらず: Bất kể / Không liên quan"
+        ],
+        "examples": [
+          "天気にかかわらず、試合はおこなわれます。 → Bất kể thời tiết thế nào trận đấu vẫn diễn ra."
+        ]
+      },
+      {
+        "id": 125,
+        "title": "～次第（しだい）",
+        "titleJp": "～次第（しだい）",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Vừa xong là sẽ",
+        "vocabulary": [],
+        "grammar": [
+          "～次第（しだい）: Vừa xong là sẽ"
+        ],
+        "examples": [
+          "来週の予定が決まり次第、すぐお知らせします。 → Khi có lịch tuần sau, tôi sẽ báo ngay."
+        ]
+      },
+      {
+        "id": 126,
+        "title": "〜途中（で/に）",
+        "titleJp": "〜途中（で/に）",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Giữa chừng",
+        "vocabulary": [],
+        "grammar": [
+          "〜途中（で/に）: Giữa chừng"
+        ],
+        "examples": [
+          "昨日バイトに行く途中で、山田先生と会いました。 → Hôm qua trên đường đi làm thêm thì gặp thầy Yamada."
+        ]
+      },
+      {
+        "id": 127,
+        "title": "~として",
+        "titleJp": "~として",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Xem như là / Lấy làm",
+        "vocabulary": [],
+        "grammar": [
+          "~として: Xem như là / Lấy làm"
+        ],
+        "examples": [
+          "試験の合格を目標として、夏休みに集中して勉強した。 → Lấy việc thi đỗ làm mục tiêu, đã tập trung học."
+        ]
+      },
+      {
+        "id": 128,
+        "title": "〜を背にして",
+        "titleJp": "〜を背にして",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Xoay lưng về / Lấy làm mốc",
+        "vocabulary": [],
+        "grammar": [
+          "〜を背にして: Xoay lưng về / Lấy làm mốc"
+        ],
+        "examples": [
+          "写真を撮りますから、そこの白い壁を背にして立ってください。 → Hãy xoay lưng vào tường trắng để chụp ảnh."
+        ]
+      },
+      {
+        "id": 129,
+        "title": "~に沿って",
+        "titleJp": "~に沿って",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: Men theo / Dọc theo",
+        "vocabulary": [],
+        "grammar": [
+          "~に沿って: Men theo / Dọc theo"
+        ],
+        "examples": [
+          "線路に沿って、桜の木が植えてあります。 → Men theo đường ray có trồng cây anh đào."
+        ]
+      },
+      {
+        "id": 130,
+        "title": "〜おそれがある",
+        "titleJp": "〜おそれがある",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Ý nghĩa: E là / Có lẽ (tiêu cực)",
+        "vocabulary": [],
+        "grammar": [
+          "〜おそれがある: E là / Có lẽ (tiêu cực)"
+        ],
+        "examples": [
           "戦争が起こるおそれがあります。 → E là chiến tranh sẽ xảy ra."
         ]
       }
