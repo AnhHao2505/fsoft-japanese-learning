@@ -47,18 +47,6 @@ export default function Sidebar({ courses, activeCourse, onSelectCourse, lessons
         />
       )}
 
-      <div className="sidebar-search-area">
-        <div className="sidebar-search">
-          <span className="search-icon">🔍</span>
-          <input
-            type="text"
-            placeholder="Tìm kiếm bài học..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-      </div>
-
       {categories.length > 1 && (
         <div className="category-filters">
           {categories.map(cat => (

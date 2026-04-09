@@ -20,8 +20,8 @@
         ],
         "examples": [
           "今日、私は駅の前のにできた新しいデパートに来ています。 → Hôm nay tôi đang có mặt ở trung tâm thương mại mới mở.",
-          "キムさんは出張のため、中国に行っています。 → Anh Kim đã đi công tác Trung Quốc (hiện đang ở đó).",
-          "なたポンさんは今、国へ帰っていますから、パーティーに参加できません。 → Natapon đã về nước."
+          "キムさんは出張(しゅっちょう)のため、中国に行っています。 → Anh Kim đã đi công tác Trung Quốc (hiện đang ở đó).",
+          "なたポンさんは今、国へ帰っていますから、パーティーに参加(さんか)できません。 → Natapon đã về nước."
         ]
       },
       {
@@ -36,10 +36,10 @@
           "N + によって"
         ],
         "examples": [
-          "[Bởi]: この建物は有名な建築家によって設計されたそうです。 → Tòa nhà được thiết kế bởi kiến trúc sư nổi tiếng.",
+          "[Bởi]: この建物は有名な建築家(けんちくか)によって設計(せっけい)されたそうです。 → Tòa nhà được thiết kế bởi kiến trúc sư nổi tiếng.",
           "[Tùy vào]: 人によって考え方が違います。 → Tùy mỗi người mà cách suy nghĩ khác nhau.",
-          "[Vì, do]: 地震によって、ビルが壊れました。 → Vì động đất, tòa nhà bị hỏng.",
-          "[Bằng, nhờ]: 友人の紹介によって、仕事を得ることができた。 → Nhờ bạn giới thiệu, tôi có việc làm."
+          "[Vì, do]: 地震(じしん)によって、ビルが壊れました。 → Vì động đất, tòa nhà bị hỏng.",
+          "[Bằng, nhờ]: 友人の紹介(しょうかい)によって、仕事を得ることができた。 → Nhờ bạn giới thiệu, tôi có việc làm."
         ]
       },
       {
@@ -54,7 +54,7 @@
           "V辞書 / Vない / Aい / Nの + うちに"
         ],
         "examples": [
-          "祖父が元気なうちに、家族で旅行したい。 → Tranh thủ lúc ông còn khỏe, tôi muốn đi du lịch.",
+          "祖父(そふ)が元気なうちに、家族で旅行したい。 → Tranh thủ lúc ông còn khỏe, tôi muốn đi du lịch.",
           "ピアノを練習しているうちに、上手になりました。 → Trong lúc luyện tập piano, tôi dần chơi giỏi lên."
         ]
       },
@@ -70,7 +70,7 @@
           "V/A/N(普通形) + わりに"
         ],
         "examples": [
-          "毎日10時間も勉強したわりには、成績がよくなかった。 → Dù dành tận 10 tiếng học mỗi ngày, thành tích lại không tốt.",
+          "毎日10時間も勉強したわりには、成績(せいせき)がよくなかった。 → Dù dành tận 10 tiếng học mỗi ngày, thành tích lại không tốt.",
           "このテストは勉強しなかったわりに、よくできた。 → Dù không ôn tập nhưng làm bài khá tốt.",
           "今日の試験はわりと簡単だった。 → Bài thi hôm nay tương đối dễ."
         ]
@@ -90,7 +90,7 @@
         ],
         "examples": [
           "18時前にご来店の方に限り、ビール1杯サービス。 → Chỉ dành cho khách đến trước 18h, miễn phí 1 ly bia.",
-          "僕が早く帰るに限って、妻は残業。 → Cứ hễ tôi về sớm thì y như rằng vợ lại tăng ca.",
+          "僕が早く帰るに限って、妻は残業(ざんぎょう)。 → Cứ hễ tôi về sớm thì y như rằng vợ lại tăng ca.",
           "夏はつめたいビールに限る。 → Mùa hè thì bia lạnh là tuyệt nhất."
         ]
       },
@@ -458,7 +458,7 @@
           "Vる / Nの + 途中"
         ],
         "examples": [
-          "昨日バイトに行く途中で、偶然山田先生と会いました。 → Đang trên đường đi làm thì tình cờ gặp thầy Yamada.",
+          "昨日バイトに行く途中で、偶然(ぐうぜん)山田先生と会いました。 → Đang trên đường đi làm thì tình cờ gặp thầy Yamada.",
           "駅から家に帰る途中に図書館がある。 → Giữa đường đi bộ từ ga về nhà thì có thư viện."
         ]
       },
@@ -475,7 +475,7 @@
         ],
         "examples": [
           "小学校だった建物を公民館として利用している。 → Sử dụng toà nhà tiểu học cũ làm nhà văn hoá.",
-          "試験の合格を目標として勉強した。 → Lấy việc thi thố làm mục tiêu học tập.",
+          "試験の合格を目標(もくひょう)として勉強した。 → Lấy việc thi thố làm mục tiêu học tập.",
           "いらなくなったプリントをトイレットとして使っています。 → Tái chế giấy in nháp làm giấy vệ sinh."
         ]
       },
@@ -491,8 +491,8 @@
           "N + を背にして"
         ],
         "examples": [
-          "正面入り口を背にして、左斜め前にあるビル。 → Đứng quay lưng vào cửa chính, nhìn chếch chéo trái là thấy toà nhà.",
-          "そこの白い壁をせにして立ってください。 → Xin hãy xoay lưng dựa vào tường trắng đằng kia."
+          "正面入り口を背にして、左斜め(ななめ)前にあるビル。 → Đứng quay lưng vào cửa chính, nhìn chếch chéo trái là thấy toà nhà.",
+          "そこの白い壁(かべ)をせにして立ってください。 → Xin hãy xoay lưng dựa vào tường trắng đằng kia."
         ]
       },
       {
@@ -507,8 +507,8 @@
           "N + に沿って"
         ],
         "examples": [
-          "線路に沿って、桜の木が植えてあります。 → Men theo đường tàu có trồng hàng cây sakura.",
-          "方針に沿って、仕事を進めてください。 → Xin hãy bám sát theo phương châm để tiến hành công việc."
+          "線路(せんろ)に沿って、桜の木が植(う)えてあります。 → Men theo đường tàu có trồng hàng cây sakura.",
+          "方針(ほうしん)に沿って、仕事を進めてください。 → Xin hãy bám sát theo phương châm để tiến hành công việc."
         ]
       },
       {
@@ -523,9 +523,9 @@
           "Vる / Nの + おそれがある"
         ],
         "examples": [
-          "戦争が起こるおそれがあります。 → Nguy cơ là chiến tranh sẽ nổ ra.",
-          "この建物は倒れる恐れがある。 → Lo sợ toà nhà kìa sẽ đổ sập.",
-          "この会社は倒産のおそれがある。 → Có nguy cơ công ty này sẽ phá sản."
+          "戦争(せんそう)が起こるおそれがあります。 → Nguy cơ là chiến tranh sẽ nổ ra.",
+          "この建物は倒れる恐(おそ)れがある。 → Lo sợ toà nhà kìa sẽ đổ sập.",
+          "この会社は倒産(とうさん)のおそれがある。 → Có nguy cơ công ty này sẽ phá sản."
         ]
       },
       {
@@ -605,8 +605,8 @@
         "content": "ところが: Nhưng mà (Trái lại với dự đoán thiết yếu).\nところで: Nhân tiện, đổi chủ đề câu chuyện hoàn toàn.",
         "vocabulary": [],
         "grammar": [
-          "A. ところが B.",
-          "A. ところで B."
+          "〜ところが、〜",
+          "〜ところで、〜"
         ],
         "examples": [
           "行くつもりだった。ところが、病気でいけなくなった。 → Định đi nhưng lại bị ốm.",
@@ -625,8 +625,8 @@
           "Vる / N + につれて"
         ],
         "examples": [
-          "お金持ちになるにつれて、彼はますます欲深くなった。 → Giàu lên kéo theo lòng tham lớn hơn.",
-          "街の発展につれて、自然が少なくなった。 → Thành phố phát triển dần thì tự nhiên ít đi."
+          "お金持ちになるにつれて、彼はますます欲深(よくぶか)くなった。 → Giàu lên kéo theo lòng tham lớn hơn.",
+          "街の発展(はってん)につれて、自然が少なくなった。 → Thành phố phát triển dần thì tự nhiên ít đi."
         ]
       },
       {
@@ -641,7 +641,7 @@
           "普通形 + ものだ / ものではない"
         ],
         "examples": [
-          "若い人はお年寄りに席を譲るものだ。 → Người trẻ phải nhường ghế cbo người già.",
+          "若い人はお年寄りに席を譲(ゆず)るものだ。 → Người trẻ phải nhường ghế cbo người già.",
           "学生のころはよくこの店でラーメンを食べたものだ。 → Hồi SV hay ghé mua mì tiệm này lắm.",
           "時間がたつのは早いものだ。 → Trôi nhanh thật."
         ]
@@ -660,7 +660,7 @@
         ],
         "examples": [
           "説明した通りにやってください。 → Xin hãy làm đúng như anh giải thích nha.",
-          "指示通り、すみやかに行動してください。 → Hoạt động đúng chuẩn theo chỉ dẫn."
+          "指示(しじ)通り、すみやかに行動してください。 → Hoạt động đúng chuẩn theo chỉ dẫn."
         ]
       },
       {
@@ -675,7 +675,7 @@
           "Vる / Vた / Nの + 際（に）"
         ],
         "examples": [
-          "避難の際は決してエレベーターを使用しないでください。 → Nếu sơ tán xin đừng dùng thang máy nha.",
+          "避難(ひなん)の際は決してエレベーターを使用しないでください。 → Nếu sơ tán xin đừng dùng thang máy nha.",
           "ご予約を変更される際には、メールでご連絡ください。 → Khi đổi lịch, báo qua Email."
         ]
       },
@@ -691,9 +691,9 @@
           "Vる / Vない + こと"
         ],
         "examples": [
-          "教室では携帯電話を使わないこと。 → Chú ý: cấm xài máy trong lớp.",
+          "教室では携帯(けいたい)電話を使わないこと。 → Chú ý: cấm xài máy trong lớp.",
           "疲れているなら早く寝ることだ。 → Mệt thì ngủ thôi (khuyên bảo).",
-          "そんな良いチャンスを逃すのはとてももったいないことだ。 → Thiệt là phí phạm cơ hội quá."
+          "そんな良いチャンスを逃(のが)すのはとてももったいないことだ。 → Thiệt là phí phạm cơ hội quá."
         ]
       },
       {
@@ -708,7 +708,7 @@
           "Vた / Vない / Nの / Aい + まま"
         ],
         "examples": [
-          "思ったままの気持ちや感想をお伝えします。 → Chuyển đạt chân thực những gì mình nghĩ.",
+          "思ったままの気持ちや感想(かんそう)をお伝えします。 → Chuyển đạt chân thực những gì mình nghĩ.",
           "見たまま感じたままに描く。 → Vẽ y xì những gì mắt thấy tim cảm."
         ]
       },
@@ -726,7 +726,7 @@
         ],
         "examples": [
           "このレポートは間違いだらけで読みにくい。 → Bài luận toàn cứ là lỗi sai.",
-          "息子が泥まみれになって帰ってきた。 → Con dính trọn bầy hầy bùn lầy rát cả người.",
+          "息子が泥(どろ)まみれになって帰ってきた。 → Con dính trọn bầy hầy bùn lầy rát cả người.",
           "人生はつらいことでいっぱいだ。 → Sức ép đời đầy những sự mệt mỏi.",
           "弟はゲームをしてばかりいる。 → Em tớ nghịch game ko ngừng nghỉ."
         ]
