@@ -1,0 +1,147 @@
+[
+  {
+    "id": 1,
+    "title": "Chào hỏi cơ bản",
+    "titleJp": "基本的な挨拶",
+    "category": "Giao tiếp",
+    "level": "N5",
+    "content": "Bài học về các câu chào hỏi cơ bản trong tiếng Nhật, thường dùng hàng ngày tại công ty FPT Software. Khi gặp đồng nghiệp vào buổi sáng, bạn nên sử dụng 'おはようございます'. Khi kết thúc ngày làm việc, câu 'お疲れ様でした' là cách nói phổ biến nhất.",
+    "vocabulary": [
+      { "word": "おはようございます", "reading": "ohayou gozaimasu", "meaning": "Xin chào (buổi sáng)" },
+      { "word": "こんにちは", "reading": "konnichiwa", "meaning": "Xin chào (buổi trưa)" },
+      { "word": "こんばんは", "reading": "konbanwa", "meaning": "Xin chào (buổi tối)" },
+      { "word": "さようなら", "reading": "sayounara", "meaning": "Tạm biệt" },
+      { "word": "お疲れ様でした", "reading": "otsukaresama deshita", "meaning": "Cảm ơn vì đã làm việc vất vả" },
+      { "word": "よろしくお願いします", "reading": "yoroshiku onegaishimasu", "meaning": "Rất vui được làm quen / Xin hãy giúp đỡ" }
+    ],
+    "grammar": [
+      "~です (desu): Copula lịch sự, tương đương 'là'",
+      "~ます (masu): Đuôi động từ lịch sự ở thể khẳng định"
+    ],
+    "examples": [
+      "おはようございます。今日もよろしくお願いします。 → Chào buổi sáng. Hôm nay cũng xin hãy giúp đỡ nhé.",
+      "お疲れ様でした。また明日。 → Vất vả rồi. Hẹn gặp lại ngày mai."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Tự giới thiệu bản thân",
+    "titleJp": "自己紹介",
+    "category": "Giao tiếp",
+    "level": "N5",
+    "content": "Khi mới vào công ty hoặc gặp khách hàng Nhật, tự giới thiệu bản thân là kỹ năng quan trọng nhất. Bạn cần nói tên, công ty, và vị trí công việc của mình bằng tiếng Nhật.",
+    "vocabulary": [
+      { "word": "名前", "reading": "namae", "meaning": "Tên" },
+      { "word": "会社", "reading": "kaisha", "meaning": "Công ty" },
+      { "word": "仕事", "reading": "shigoto", "meaning": "Công việc" },
+      { "word": "エンジニア", "reading": "enjinia", "meaning": "Kỹ sư" },
+      { "word": "出身", "reading": "shusshin", "meaning": "Quê quán" },
+      { "word": "趣味", "reading": "shumi", "meaning": "Sở thích" }
+    ],
+    "grammar": [
+      "私は～です (watashi wa ~ desu): Tôi là ~",
+      "～と申します (~ to moushimasu): Tên tôi là ~ (kính ngữ)"
+    ],
+    "examples": [
+      "初めまして。FPTソフトウェアのハオと申します。エンジニアです。 → Lần đầu gặp mặt. Tôi tên Hảo, từ FPT Software. Tôi là kỹ sư.",
+      "ベトナムの出身です。趣味はプログラミングです。 → Tôi đến từ Việt Nam. Sở thích của tôi là lập trình."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Số đếm và Ngày tháng",
+    "titleJp": "数字と日付",
+    "category": "Ngữ pháp",
+    "level": "N5",
+    "content": "Số đếm trong tiếng Nhật có nhiều cách đọc khác nhau tùy theo ngữ cảnh. Đây là kiến thức nền tảng quan trọng khi làm việc với khách hàng Nhật, đặc biệt trong các cuộc họp về deadline và timeline dự án.",
+    "vocabulary": [
+      { "word": "一", "reading": "ichi", "meaning": "Một (1)" },
+      { "word": "二", "reading": "ni", "meaning": "Hai (2)" },
+      { "word": "三", "reading": "san", "meaning": "Ba (3)" },
+      { "word": "月曜日", "reading": "getsuyoubi", "meaning": "Thứ Hai" },
+      { "word": "今日", "reading": "kyou", "meaning": "Hôm nay" },
+      { "word": "明日", "reading": "ashita", "meaning": "Ngày mai" }
+    ],
+    "grammar": [
+      "～月 (~gatsu): Tháng ~",
+      "～日 (~nichi/ka): Ngày ~",
+      "～年 (~nen): Năm ~"
+    ],
+    "examples": [
+      "今日は2024年4月9日です。 → Hôm nay là ngày 9 tháng 4 năm 2024.",
+      "会議は月曜日です。 → Cuộc họp vào thứ Hai."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Tại công ty - Từ vựng IT",
+    "titleJp": "会社で - IT用語",
+    "category": "Từ vựng",
+    "level": "N4",
+    "content": "Làm việc tại FPT Software với khách hàng Nhật, bạn sẽ thường xuyên gặp các thuật ngữ IT được 'Nhật hóa'. Nhiều từ vựng IT trong tiếng Nhật là katakana (phiên âm từ tiếng Anh) nên khá dễ nhớ.",
+    "vocabulary": [
+      { "word": "開発", "reading": "kaihatsu", "meaning": "Phát triển (Development)" },
+      { "word": "設計", "reading": "sekkei", "meaning": "Thiết kế (Design)" },
+      { "word": "テスト", "reading": "tesuto", "meaning": "Kiểm thử (Testing)" },
+      { "word": "バグ", "reading": "bagu", "meaning": "Lỗi (Bug)" },
+      { "word": "要件", "reading": "youken", "meaning": "Yêu cầu (Requirement)" },
+      { "word": "納品", "reading": "nouhin", "meaning": "Bàn giao (Delivery)" }
+    ],
+    "grammar": [
+      "～を開発する (~wo kaihatsu suru): Phát triển ~",
+      "～について (~ni tsuite): Về ~"
+    ],
+    "examples": [
+      "このバグを修正してください。 → Xin hãy sửa bug này.",
+      "要件について確認したいです。 → Tôi muốn xác nhận về yêu cầu."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Email công việc",
+    "titleJp": "ビジネスメール",
+    "category": "Giao tiếp",
+    "level": "N4",
+    "content": "Email là phương tiện giao tiếp chính với khách hàng Nhật. Viết email bằng tiếng Nhật có cấu trúc rất rõ ràng: lời chào → nội dung chính → lời kết → chữ ký. Sử dụng đúng kính ngữ (keigo) rất quan trọng.",
+    "vocabulary": [
+      { "word": "お世話になっております", "reading": "osewa ni natte orimasu", "meaning": "Cảm ơn đã quan tâm (lời chào email)" },
+      { "word": "添付", "reading": "tenpu", "meaning": "Đính kèm" },
+      { "word": "確認", "reading": "kakunin", "meaning": "Xác nhận" },
+      { "word": "報告", "reading": "houkoku", "meaning": "Báo cáo" },
+      { "word": "以上", "reading": "ijou", "meaning": "Trên đây / Hết" },
+      { "word": "ご確認ください", "reading": "go kakunin kudasai", "meaning": "Xin hãy xác nhận" }
+    ],
+    "grammar": [
+      "～していただけますか (~shite itadakemasu ka): Bạn có thể ~ được không? (kính ngữ)",
+      "～いたします (~itashimasu): Tôi sẽ ~ (khiêm nhường ngữ)"
+    ],
+    "examples": [
+      "お世話になっております。FPTソフトウェアのハオです。 → Cảm ơn đã quan tâm. Tôi là Hảo từ FPT Software.",
+      "資料を添付いたします。ご確認ください。 → Tôi đính kèm tài liệu. Xin hãy xác nhận."
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Họp trực tuyến",
+    "titleJp": "オンライン会議",
+    "category": "Giao tiếp",
+    "level": "N3",
+    "content": "Họp trực tuyến qua Teams hoặc Zoom với khách hàng Nhật đòi hỏi kỹ năng nghe và nói tốt. Dưới đây là các cụm từ thường dùng trong cuộc họp.",
+    "vocabulary": [
+      { "word": "議事録", "reading": "gijiroku", "meaning": "Biên bản họp" },
+      { "word": "進捗", "reading": "shinchoku", "meaning": "Tiến độ" },
+      { "word": "課題", "reading": "kadai", "meaning": "Vấn đề cần giải quyết" },
+      { "word": "共有", "reading": "kyouyuu", "meaning": "Chia sẻ" },
+      { "word": "画面共有", "reading": "gamen kyouyuu", "meaning": "Chia sẻ màn hình" },
+      { "word": "スケジュール", "reading": "sukejuuru", "meaning": "Lịch trình" }
+    ],
+    "grammar": [
+      "～について報告します (~ni tsuite houkoku shimasu): Tôi xin báo cáo về ~",
+      "～の進捗は～です (~no shinchoku wa ~ desu): Tiến độ của ~ là ~"
+    ],
+    "examples": [
+      "画面共有してもよろしいですか？ → Tôi có thể chia sẻ màn hình được không?",
+      "今週の進捗について報告します。 → Tôi xin báo cáo về tiến độ tuần này."
+    ]
+  }
+]
