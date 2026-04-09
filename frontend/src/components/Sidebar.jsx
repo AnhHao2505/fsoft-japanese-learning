@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
+import CourseSelector from './CourseSelector';
 
-export default function Sidebar({ lessons, activeId, onSelectLesson }) {
+export default function Sidebar({ courses, activeCourse, onSelectCourse, lessons, activeId, onSelectLesson }) {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState('Tất cả');
 
@@ -19,6 +20,12 @@ export default function Sidebar({ lessons, activeId, onSelectLesson }) {
     });
   }, [lessons, activeCategory, search]);
 
+  // Reset category filter when course changes
+  useMemo(() => {
+    setActiveCategory('Tất cả');
+    setSearch('');
+  }, [activeCourse?.id]);
+
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
@@ -26,9 +33,18 @@ export default function Sidebar({ lessons, activeId, onSelectLesson }) {
           <div className="logo-icon">🎌</div>
           <h1>
             日本語学習
-            <span>FPT Software</span>
+            <span>Japanese Learning</span>
           </h1>
         </div>
+      </div>
+
+      <CourseSelector
+        courses={courses}
+        activeCourse={activeCourse}
+        onSelectCourse={onSelectCourse}
+      />
+
+      <div className="sidebar-search-area">
         <div className="sidebar-search">
           <span className="search-icon">🔍</span>
           <input
@@ -40,36 +56,41 @@ export default function Sidebar({ lessons, activeId, onSelectLesson }) {
         </div>
       </div>
 
-      <div className="category-filters">
-        {categories.map(cat => (
-          <button
-            key={cat}
-            className={`category-btn ${activeCategory === cat ? 'active' : ''}`}
-            onClick={() => setActiveCategory(cat)}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+      {categories.length > 1 && (
+        <div className="category-filters">
+          {categories.map(cat => (
+            <button
+              key={cat}
+              className={`category-btn ${activeCategory === cat ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className="lesson-list">
-        {filteredLessons.map(lesson => (
-          <div
-            key={lesson.id}
-            className={`lesson-item ${activeId === lesson.id ? 'active' : ''}`}
-            onClick={() => onSelectLesson(lesson.id)}
-          >
-            <div className="lesson-item-title">{lesson.title}</div>
-            <div className="lesson-item-title-jp">{lesson.titleJp}</div>
-            <div className="lesson-item-meta">
-              <span className="lesson-tag tag-level">{lesson.level}</span>
-              <span className="lesson-tag tag-category">{lesson.category}</span>
+        {filteredLessons.length > 0 ? (
+          filteredLessons.map(lesson => (
+            <div
+              key={lesson.id}
+              className={`lesson-item ${activeId === lesson.id ? 'active' : ''}`}
+              onClick={() => onSelectLesson(lesson.id)}
+            >
+              <div className="lesson-item-title">{lesson.title}</div>
+              <div className="lesson-item-title-jp">{lesson.titleJp}</div>
+              <div className="lesson-item-meta">
+                <span className="lesson-tag tag-level">{lesson.level}</span>
+                <span className="lesson-tag tag-category">{lesson.category}</span>
+              </div>
             </div>
-          </div>
-        ))}
-        {filteredLessons.length === 0 && (
-          <div style={{ textAlign: 'center', padding: '40px 20px', color: 'var(--text-muted)' }}>
-            Không tìm thấy bài học nào 😕
+          ))
+        ) : (
+          <div className="empty-lessons">
+            <div className="empty-icon">📭</div>
+            <p>Chưa có bài học nào</p>
+            <span>Dữ liệu sẽ được cập nhật sớm</span>
           </div>
         )}
       </div>

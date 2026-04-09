@@ -2,6 +2,7 @@ package com.fsoft.japaneselearning.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fsoft.japaneselearning.model.Course;
 import com.fsoft.japaneselearning.model.Lesson;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.ResponseEntity;
@@ -18,34 +19,65 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class LessonController {
 
-    private List<Lesson> lessons = new ArrayList<>();
+    private List<Course> courses = new ArrayList<>();
 
     @PostConstruct
     public void init() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        InputStream is = new ClassPathResource("lessons.json").getInputStream();
-        lessons = mapper.readValue(is, new TypeReference<List<Lesson>>() {});
+        InputStream is = new ClassPathResource("courses.json").getInputStream();
+        courses = mapper.readValue(is, new TypeReference<List<Course>>() {});
     }
 
-    @GetMapping("/lessons")
-    public ResponseEntity<List<Lesson>> getAllLessons() {
-        return ResponseEntity.ok(lessons);
+    // === Course endpoints ===
+
+    @GetMapping("/courses")
+    public ResponseEntity<List<Course>> getAllCourses() {
+        // Return courses without lessons for listing
+        List<Course> summary = courses.stream().map(c -> {
+            Course s = new Course();
+            s.setId(c.getId());
+            s.setName(c.getName());
+            s.setNameJp(c.getNameJp());
+            s.setDescription(c.getDescription());
+            s.setLevel(c.getLevel());
+            s.setIcon(c.getIcon());
+            s.setLessons(null);
+            return s;
+        }).toList();
+        return ResponseEntity.ok(summary);
     }
 
-    @GetMapping("/lessons/{id}")
-    public ResponseEntity<Lesson> getLessonById(@PathVariable Long id) {
-        Optional<Lesson> lesson = lessons.stream()
-                .filter(l -> l.getId().equals(id))
+    @GetMapping("/courses/{courseId}")
+    public ResponseEntity<Course> getCourseById(@PathVariable String courseId) {
+        Optional<Course> course = courses.stream()
+                .filter(c -> c.getId().equals(courseId))
                 .findFirst();
-        return lesson.map(ResponseEntity::ok)
+        return course.map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/lessons/category/{category}")
-    public ResponseEntity<List<Lesson>> getLessonsByCategory(@PathVariable String category) {
-        List<Lesson> filtered = lessons.stream()
-                .filter(l -> l.getCategory().equalsIgnoreCase(category))
-                .toList();
-        return ResponseEntity.ok(filtered);
+    // === Lesson endpoints ===
+
+    @GetMapping("/courses/{courseId}/lessons")
+    public ResponseEntity<List<Lesson>> getLessonsByCourse(@PathVariable String courseId) {
+        Optional<Course> course = courses.stream()
+                .filter(c -> c.getId().equals(courseId))
+                .findFirst();
+        return course.map(c -> ResponseEntity.ok(c.getLessons()))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/courses/{courseId}/lessons/{lessonId}")
+    public ResponseEntity<Lesson> getLesson(@PathVariable String courseId, @PathVariable Long lessonId) {
+        Optional<Course> course = courses.stream()
+                .filter(c -> c.getId().equals(courseId))
+                .findFirst();
+        if (course.isEmpty()) return ResponseEntity.notFound().build();
+
+        Optional<Lesson> lesson = course.get().getLessons().stream()
+                .filter(l -> l.getId().equals(lessonId))
+                .findFirst();
+        return lesson.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 }

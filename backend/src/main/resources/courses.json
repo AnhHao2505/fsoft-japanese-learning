@@ -1,0 +1,158 @@
+[
+  {
+    "id": "fpt-software",
+    "name": "FPT Software",
+    "nameJp": "FPTソフトウェア",
+    "description": "Khóa học tiếng Nhật N3 dành cho nhân viên FPT Software, tập trung vào giao tiếp công sở và thuật ngữ IT.",
+    "level": "N3",
+    "icon": "🏢",
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Chào hỏi cơ bản",
+        "titleJp": "基本的な挨拶",
+        "category": "Giao tiếp",
+        "level": "N5",
+        "content": "Bài học về các câu chào hỏi cơ bản trong tiếng Nhật, thường dùng hàng ngày tại công ty FPT Software.",
+        "vocabulary": [
+          { "word": "おはようございます", "reading": "ohayou gozaimasu", "meaning": "Xin chào (buổi sáng)" },
+          { "word": "お疲れ様でした", "reading": "otsukaresama deshita", "meaning": "Cảm ơn vì đã làm việc vất vả" }
+        ],
+        "grammar": [
+          "~です (desu): Copula lịch sự, tương đương 'là'"
+        ],
+        "examples": [
+          "おはようございます。今日もよろしくお願いします。 → Chào buổi sáng. Hôm nay cũng xin hãy giúp đỡ nhé."
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Tại công ty - Từ vựng IT",
+        "titleJp": "会社で - IT用語",
+        "category": "Từ vựng",
+        "level": "N4",
+        "content": "Làm việc tại FPT Software với khách hàng Nhật, bạn sẽ thường xuyên gặp các thuật ngữ IT được 'Nhật hóa'.",
+        "vocabulary": [
+          { "word": "開発", "reading": "kaihatsu", "meaning": "Phát triển" },
+          { "word": "バグ", "reading": "bagu", "meaning": "Lỗi (Bug)" }
+        ],
+        "grammar": [
+          "～を開発する (~wo kaihatsu suru): Phát triển ~"
+        ],
+        "examples": [
+          "このバグを修正してください。 → Xin hãy sửa bug này."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jpd316",
+    "name": "JPD316-FPT",
+    "nameJp": "JPD316",
+    "description": "Khóa học tiếng Nhật JPD316 trình độ N3 tại FPT, khung chương trình học thuật.",
+    "level": "N3",
+    "icon": "📘",
+    "lessons": [
+      {
+        "id": 101,
+        "title": "Cấu trúc với ところ",
+        "titleJp": "「ところ」の文法",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Bài học này nhóm các cấu trúc ngữ pháp liên quan đến ところ, diễn tả một hành động đang ở thời điểm nào (chuẩn bị, đang làm, vừa xong) hoặc chuyển đổi mạch câu chuyện.",
+        "vocabulary": [],
+        "grammar": [
+          "Vている + ところだ: Đang xảy ra giữa chừng",
+          "Vた + ところだ: Vừa mới làm xong",
+          "Vる / Vない + ところだった: Suýt nữa thì…",
+          "V普通形 + ところに/へ: Đúng lúc đang xảy ra thì B xảy ra đến",
+          "Vている/た + ところを: Đang lúc (bị phát hiện, bị bắt...)",
+          "A。ところが、B: Tuy nhiên, nhưng mà (kết quả trái dự đoán)",
+          "ところで: Nhân tiện, đổi chủ đề câu chuyện"
+        ],
+        "examples": [
+          "今ご飯を食べているところです。 → Tôi đang ăn cơm.",
+          "今帰ったところです。 → Tôi vừa mới về.",
+          "危ない！もう少しで事故になるところだった。 → Suýt nữa thì xảy ra tai nạn.",
+          "電話しているところに、友達が来た。 → Đúng lúc đang gọi điện thì bạn đến.",
+          "昨夜コンサートに行くつもりだった。ところが、病気でいけなくなった。 → Tối qua tôi định đi hòa nhạc. Nhưng bị bệnh nên không đi được."
+        ]
+      },
+      {
+        "id": 102,
+        "title": "Cấu trúc với もの và こと",
+        "titleJp": "「もの・こと」の文法",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Hệ thống các ngữ pháp mang tính trừu tượng liên quan đến もの (vốn dĩ, bản chất) và こと (mệnh lệnh, việc trừu tượng).",
+        "vocabulary": [],
+        "grammar": [
+          "～ものだ: Quy luật tự nhiên / điều hiển nhiên / chuẩn mực phải tuân theo",
+          "Vた + ものだ: Hồi xưa, ngày xưa thường... (hồi tưởng)",
+          "Cảm thán ～ものだ: Thật là, đúng là (thể hiện cảm xúc mạnh)",
+          "～こと: Dùng để viết luật hoặc chỉ thị",
+          "～ことだ: Lời khuyên (nên/không nên)",
+          "N・A + ことだ: Cảm thán (thật là...)"
+        ],
+        "examples": [
+          "若い人はお年寄りに席を譲るものだ。 → Người trẻ nên nhường ghế cho người già.",
+          "学生のころはよくこの店でラーメンを食べたものだ。 → Hồi còn sinh viên tôi thường ăn ramen ở quán này.",
+          "時間がたつのは早いものだ。 → Thời gian trôi nhanh thật.",
+          "教室では携帯電話を使わないこと。 → Không được dùng điện thoại trong lớp.",
+          "疲れているなら早く寝ることだ。 → Nếu mệt thì nên ngủ sớm.",
+          "そんな良いチャンスを逃すのはとてももったいないことだ。 → Bỏ lỡ cơ hội tốt như vậy thật đáng tiếc."
+        ]
+      },
+      {
+        "id": 103,
+        "title": "Chỉ phương thức, trạng thái",
+        "titleJp": "方法・状態を表す",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Các mẫu câu dùng để thể hiện trạng thái (giữ nguyên, đầy rẫy) hoặc để chỉ mốc thời gian, diễn biến.",
+        "vocabulary": [],
+        "grammar": [
+          "～通り（に）: Giống như, đúng như",
+          "～際（さい）: Khi, lúc, trong trường hợp (hay dùng trong thông báo)",
+          "～まま: Cứ để nguyên như thế, không đổi",
+          "～だらけ: Đầy, toàn là... (nghĩa tiêu cực, như xước xát, lỗi)",
+          "～まみれ: Dính đầy (bùn, đất...)",
+          "N + ばかり / Vて + ばかり: Toàn chỉ (thường mang ý phàn nàn)"
+        ],
+        "examples": [
+          "説明した通りにやってください。 → Hãy làm đúng như đã giải thích.",
+          "海外へ行く際には、パスポートを忘れないでください。 → Khi ra nước ngoài, đừng quên hộ chiếu.",
+          "思ったままの気持ちや感想をお伝えします。 → Tôi sẽ truyền đạt lại đúng như những gì tôi cảm nhận.",
+          "このレポートは間違いだらけで読みにくい。 → Báo cáo này toàn là lỗi sai, rất khó đọc.",
+          "弟はゲームをしてばかりいる。 → Em trai tôi chỉ toàn chơi game."
+        ]
+      },
+      {
+        "id": 104,
+        "title": "Mẫu câu N3 bổ sung (Theo file JPD316)",
+        "titleJp": "N3その他の文法",
+        "category": "Ngữ pháp",
+        "level": "N3",
+        "content": "Tổng hợp các mẫu ngữ pháp xuất hiện bổ sung trong chương trình luyện thi.",
+        "vocabulary": [],
+        "grammar": [
+          "~移動 Vている: Diễn tả kết quả của hành động sau khi chuyển động (Đang ở đó)",
+          "～によって: Bởi, dựa theo, tùy vào, nhờ vào, do",
+          "～にかかわらず / ～にかかわりなく: Bất kể, không liên quan đến",
+          "～次第（しだい）: Vừa xong là sẽ... (Ngay sau khi)",
+          "〜途中（で / に）: Giữa chừng đang làm việc gì đó",
+          "~として: Lấy N1 làm N2 / xem N1 là N2",
+          "〜おそれがある: E là, có lẽ... (Dự báo tình huống xấu)"
+        ],
+        "examples": [
+          "今日、私は駅の前にできた新しいデパートに来ています。 → Hôm nay tôi đang có mặt ở trung tâm thương mại mới mở trước ga.",
+          "この建物はベトナムの有名な建築家によって設計されたそうです。 → Tòa nhà này nghe nói được thiết kế bởi một kiến trúc sư nổi tiếng của Việt Nam.",
+          "天気にかかわらず、試合はおこなわれます。 → Bất kể thời tiết thế nào trận đấu vẫn sẽ diễn ra.",
+          "来週の予定が決まり次第、すぐお知らせします。 → Khi lịch tuần sau chốt xong, tôi sẽ thông báo ngay.",
+          "昨日バイトに行く途中で、山田先生と会いました。 → Hôm qua trên đường đi làm thêm thì gặp thầy Yamada.",
+          "戦争が起こるおそれがあります。 → E là chiến tranh sẽ xảy ra."
+        ]
+      }
+    ]
+  }
+]
