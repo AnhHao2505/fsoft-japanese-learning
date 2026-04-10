@@ -9,7 +9,7 @@
     "lessons": [
       {
         "id": 101,
-        "title": "～Vている (移動)",
+        "title": "[01] ～Vている (移動)",
         "titleJp": "Vている (Kết quả chuyển động)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -26,7 +26,7 @@
       },
       {
         "id": 102,
-        "title": "～によって (Bị động)",
+        "title": "[02] ～によって (Bị động)",
         "titleJp": "によって (Bởi... - Tác nhân)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -42,7 +42,7 @@
       },
       {
         "id": 103,
-        "title": "～によって (Khác biệt)",
+        "title": "[03] ～によって (Khác biệt)",
         "titleJp": "によって (Tùy vào...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -58,7 +58,7 @@
       },
       {
         "id": 104,
-        "title": "～によって (Nguyên nhân)",
+        "title": "[04] ～によって (Nguyên nhân)",
         "titleJp": "によって (Vì, do...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -74,7 +74,7 @@
       },
       {
         "id": 105,
-        "title": "～によって (Cách thức)",
+        "title": "[05] ～によって (Cách thức)",
         "titleJp": "によって (Nhờ vào / Thông qua)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -90,7 +90,7 @@
       },
       {
         "id": 106,
-        "title": "～うちに (Tranh thủ)",
+        "title": "[06] ～うちに (Tranh thủ)",
         "titleJp": "うちに (Tranh thủ lúc...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -106,7 +106,7 @@
       },
       {
         "id": 107,
-        "title": "～うちに (Vô thức)",
+        "title": "[07] ～うちに (Vô thức)",
         "titleJp": "うちに (Trong lúc... dần dần)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -122,7 +122,7 @@
       },
       {
         "id": 108,
-        "title": "～わりに",
+        "title": "[08] ～わりに",
         "titleJp": "わりに (Mặc dù... nhưng)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -138,7 +138,7 @@
       },
       {
         "id": 109,
-        "title": "～わりと",
+        "title": "[09] ～わりと",
         "titleJp": "わりと (Khá là... / Tương đối)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -154,7 +154,7 @@
       },
       {
         "id": 110,
-        "title": "～に限り (かぎり)",
+        "title": "[10] ～に限り (かぎり)",
         "titleJp": "に限(かぎ)り (Chỉ dành cho...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -170,7 +170,7 @@
       },
       {
         "id": 111,
-        "title": "～に限って (かぎって)",
+        "title": "[11] ～に限って (かぎって)",
         "titleJp": "に限(かぎ)って (Cứ hễ đúng lúc...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -185,7 +185,7 @@
       },
       {
         "id": 112,
-        "title": "～に限る (かぎる)",
+        "title": "[12] ～に限る (かぎる)",
         "titleJp": "に限(かぎ)る (...là nhất!)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -200,7 +200,7 @@
       },
       {
         "id": 113,
-        "title": "～こそ",
+        "title": "[13] ～こそ",
         "titleJp": "こそ (Nhất định là / Chính là)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -216,7 +216,7 @@
       },
       {
         "id": 114,
-        "title": "～からこそ",
+        "title": "[14] ～からこそ",
         "titleJp": "からこそ (Chính vì...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -232,7 +232,7 @@
       },
       {
         "id": 115,
-        "title": "～につき",
+        "title": "[15] ～につき",
         "titleJp": "につき (Bởi vì - Trang trọng)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -248,7 +248,7 @@
       },
       {
         "id": 116,
-        "title": "～ということだ (Nghĩa)",
+        "title": "[16] ～ということだ (Nghĩa)",
         "titleJp": "ということだ (Có nghĩa là...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -264,7 +264,7 @@
       },
       {
         "id": 117,
-        "title": "～ということだ (Nghe nói)",
+        "title": "[17] ～ということだ (Nghe nói)",
         "titleJp": "ということだ (Nghe nói là...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -279,7 +279,7 @@
       },
       {
         "id": 118,
-        "title": "～でしょうか",
+        "title": "[18] ～でしょうか",
         "titleJp": "でしょうか (Hỏi lịch sự)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -294,7 +294,7 @@
       },
       {
         "id": 119,
-        "title": "～はずだ",
+        "title": "[19] ～はずだ",
         "titleJp": "はずだ (Chắc chắn là...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -310,7 +310,7 @@
       },
       {
         "id": 120,
-        "title": "～向け (むけ)",
+        "title": "[20] ～向け (むけ)",
         "titleJp": "向(む)け (Dành cho / Hướng tới)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -326,7 +326,7 @@
       },
       {
         "id": 121,
-        "title": "～向き (むき)",
+        "title": "[21] ～向き (むき)",
         "titleJp": "向(む)き (Phù hợp cho...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -341,7 +341,7 @@
       },
       {
         "id": 122,
-        "title": "～はずがない",
+        "title": "[22] ～はずがない",
         "titleJp": "はずがない (Chắc chắn không)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -356,7 +356,7 @@
       },
       {
         "id": 123,
-        "title": "～（ば）～ほど",
+        "title": "[23] ～（ば）～ほど",
         "titleJp": "ば～ほど (Càng... càng...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -373,7 +373,7 @@
       },
       {
         "id": 124,
-        "title": "～なんて",
+        "title": "[24] ～なんて",
         "titleJp": "なんて (Ngạc nhiên / Không ngờ)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -388,7 +388,7 @@
       },
       {
         "id": 125,
-        "title": "～でも",
+        "title": "[25] ～でも",
         "titleJp": "でも (Gì đó như... / Gợi ý)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -404,7 +404,7 @@
       },
       {
         "id": 126,
-        "title": "こんな/そんな/あんな",
+        "title": "[26] こんな/そんな/あんな",
         "titleJp": "こんな・そんな・あんな (Như thế)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -420,7 +420,7 @@
       },
       {
         "id": 127,
-        "title": "～ふうに",
+        "title": "[27] ～ふうに",
         "titleJp": "ふうに (Theo cách / Theo kiểu)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -436,7 +436,7 @@
       },
       {
         "id": 128,
-        "title": "～ことで",
+        "title": "[28] ～ことで",
         "titleJp": "ことで (Bằng việc / Nhờ việc)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -452,7 +452,7 @@
       },
       {
         "id": 129,
-        "title": "～なあ",
+        "title": "[29] ～なあ",
         "titleJp": "なあ (Cảm thán)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -467,7 +467,7 @@
       },
       {
         "id": 130,
-        "title": "～ことがある / ～こともある",
+        "title": "[30] ～ことがある / ～こともある",
         "titleJp": "ことがある (Thỉnh thoảng)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -483,7 +483,7 @@
       },
       {
         "id": 131,
-        "title": "～にとって",
+        "title": "[31] ～にとって",
         "titleJp": "にとって (Đối với... - Quan điểm)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -499,7 +499,7 @@
       },
       {
         "id": 132,
-        "title": "～に対して (Đối lập)",
+        "title": "[32] ～に対して (Đối lập)",
         "titleJp": "に対(たい)して (Trái ngược với...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -514,7 +514,7 @@
       },
       {
         "id": 133,
-        "title": "～に対して (Thái độ)",
+        "title": "[33] ～に対して (Thái độ)",
         "titleJp": "に対(たい)して (Đối với - Hướng tới)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -530,7 +530,7 @@
       },
       {
         "id": 134,
-        "title": "～ことだし",
+        "title": "[34] ～ことだし",
         "titleJp": "ことだし (Vì... nên...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -546,7 +546,7 @@
       },
       {
         "id": 135,
-        "title": "～てくれない？",
+        "title": "[35] ～てくれない？",
         "titleJp": "てくれない？ (Làm giúp được không?)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -561,7 +561,7 @@
       },
       {
         "id": 136,
-        "title": "～じゃない？/ んじゃない？",
+        "title": "[36] ～じゃない？/ んじゃない？",
         "titleJp": "じゃない？ (Chẳng phải... sao?)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -577,7 +577,7 @@
       },
       {
         "id": 137,
-        "title": "お・ご～です / でしょう",
+        "title": "[37] お・ご～です / でしょう",
         "titleJp": "お・ご〜です (Tôn kính ngữ)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -593,7 +593,7 @@
       },
       {
         "id": 138,
-        "title": "～場合 (ばあい)",
+        "title": "[38] ～場合 (ばあい)",
         "titleJp": "場合(ばあい) (Trong trường hợp...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -609,7 +609,7 @@
       },
       {
         "id": 139,
-        "title": "～ないことには～ない",
+        "title": "[39] ～ないことには～ない",
         "titleJp": "ないことには～ない (Nếu không... thì không thể)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -626,7 +626,7 @@
       },
       {
         "id": 140,
-        "title": "～ことになっています",
+        "title": "[40] ～ことになっています",
         "titleJp": "ことになっています (Được quy định là...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -642,7 +642,7 @@
       },
       {
         "id": 141,
-        "title": "～で結構です / かまいません",
+        "title": "[41] ～で結構です / かまいません",
         "titleJp": "で結構(けっこう)です (Được rồi / Không sao)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -659,7 +659,7 @@
       },
       {
         "id": 142,
-        "title": "Vたいことがあるんですが",
+        "title": "[42] Vたいことがあるんですが",
         "titleJp": "たいことがあるんですが (Tôi muốn nhờ/hỏi...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -675,7 +675,7 @@
       },
       {
         "id": 143,
-        "title": "～(よ)うとする",
+        "title": "[43] ～(よ)うとする",
         "titleJp": "ようとする (Định / Sắp làm)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -691,7 +691,7 @@
       },
       {
         "id": 144,
-        "title": "～みたい/ようなんですが",
+        "title": "[44] ～みたい/ようなんですが",
         "titleJp": "みたいなんですが (Hình như...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -707,7 +707,7 @@
       },
       {
         "id": 145,
-        "title": "Vていただきたいんですが",
+        "title": "[45] Vていただきたいんですが",
         "titleJp": "ていただきたいんですが (Xin hãy giúp...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -722,7 +722,7 @@
       },
       {
         "id": 146,
-        "title": "～には",
+        "title": "[46] ～には",
         "titleJp": "には (Để mà... thì cần)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -737,7 +737,7 @@
       },
       {
         "id": 147,
-        "title": "～にかかわらず / なく",
+        "title": "[47] ～にかかわらず / なく",
         "titleJp": "にかかわらず (Bất kể...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -753,7 +753,7 @@
       },
       {
         "id": 148,
-        "title": "～次第 (しだい)",
+        "title": "[48] ～次第 (しだい)",
         "titleJp": "次第(しだい) (Ngay sau khi...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -769,7 +769,7 @@
       },
       {
         "id": 149,
-        "title": "～途中 (で/に)",
+        "title": "[49] ～途中 (で/に)",
         "titleJp": "途中(とちゅう) (Giữa chừng)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -785,7 +785,7 @@
       },
       {
         "id": 150,
-        "title": "～として",
+        "title": "[50] ～として",
         "titleJp": "として (Với tư cách / Xem như)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -801,7 +801,7 @@
       },
       {
         "id": 151,
-        "title": "～を背にして (せにして)",
+        "title": "[51] ～を背にして (せにして)",
         "titleJp": "を背(せ)にして (Quay lưng về phía...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -817,7 +817,7 @@
       },
       {
         "id": 152,
-        "title": "～に沿って (そって)",
+        "title": "[52] ～に沿って (そって)",
         "titleJp": "に沿(そ)って (Dọc theo / Dựa theo)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -833,7 +833,7 @@
       },
       {
         "id": 153,
-        "title": "～おそれがある",
+        "title": "[53] ～おそれがある",
         "titleJp": "おそれがある (E rằng / Sợ là...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -849,7 +849,7 @@
       },
       {
         "id": 154,
-        "title": "～そうにない",
+        "title": "[54] ～そうにない",
         "titleJp": "そうにない (Có vẻ không thể...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -865,7 +865,7 @@
       },
       {
         "id": 155,
-        "title": "～ところ",
+        "title": "[55] ～ところ",
         "titleJp": "ところ (Sắp / Đang / Vừa mới)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -885,7 +885,7 @@
       },
       {
         "id": 156,
-        "title": "～ものだ",
+        "title": "[56] ～ものだ",
         "titleJp": "ものだ (Đạo lý / Hiển nhiên)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -902,7 +902,7 @@
       },
       {
         "id": 157,
-        "title": "～ことだ",
+        "title": "[57] ～ことだ",
         "titleJp": "ことだ (Lời khuyên / Cảm thán)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -920,7 +920,7 @@
       },
       {
         "id": 158,
-        "title": "～だらけ / まみれ",
+        "title": "[58] ～だらけ / まみれ",
         "titleJp": "だらけ / まみれ (Đầy / Toàn là...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -937,7 +937,7 @@
       },
       {
         "id": 159,
-        "title": "～とか（で）",
+        "title": "[59] ～とか（で）",
         "titleJp": "とかで (Nghe nói là / Hình như)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -953,7 +953,7 @@
       },
       {
         "id": 160,
-        "title": "～てしまったようなんです",
+        "title": "[60] ～てしまったようなんです",
         "titleJp": "てしまったようなんです (Hình như đã lỡ...)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -968,7 +968,7 @@
       },
       {
         "id": 161,
-        "title": "～ところが / ところで",
+        "title": "[61] ～ところが / ところで",
         "titleJp": "ところが / ところで (Nhưng mà / Nhân tiện)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -985,7 +985,7 @@
       },
       {
         "id": 162,
-        "title": "～につれて",
+        "title": "[62] ～につれて",
         "titleJp": "につれて (Càng... càng - Song hành)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -1001,7 +1001,7 @@
       },
       {
         "id": 163,
-        "title": "～通り / どおり",
+        "title": "[63] ～通り / どおり",
         "titleJp": "通(とお)り (Theo đúng như)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -1018,7 +1018,7 @@
       },
       {
         "id": 164,
-        "title": "～際 (さい)",
+        "title": "[64] ～際 (さい)",
         "titleJp": "際(さい) (Khi / Trong trường hợp)",
         "category": "Ngữ pháp",
         "level": "N3",
@@ -1034,7 +1034,7 @@
       },
       {
         "id": 165,
-        "title": "～まま",
+        "title": "[65] ～まま",
         "titleJp": "まま (Để nguyên / Giữ nguyên)",
         "category": "Ngữ pháp",
         "level": "N3",
