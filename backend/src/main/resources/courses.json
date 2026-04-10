@@ -1054,7 +1054,7 @@
         "titleJp": "買い物(かいもの)・日常生活(にちじょうせいかつ)",
         "category": "Từ vựng",
         "level": "N3",
-        "content": "Tổng hợp 70 từ vựng theo chủ đề của chương trình JPD316.",
+        "content": "Tổng hợp 75 từ vựng theo chủ đề của chương trình JPD316.",
         "vocabulary": [
           {
             "word": "品物",
@@ -1405,6 +1405,31 @@
             "word": "修理",
             "reading": "しゅうり",
             "meaning": "Sửa chữa"
+          },
+          {
+            "word": "エピソード集",
+            "reading": "しゅう",
+            "meaning": "Tập các câu chuyện / Episode"
+          },
+          {
+            "word": "ブランド",
+            "reading": "",
+            "meaning": "Thương hiệu"
+          },
+          {
+            "word": "フリーサイズ",
+            "reading": "",
+            "meaning": "Kích cỡ tự do (Free size)"
+          },
+          {
+            "word": "壮麗",
+            "reading": "そうれい",
+            "meaning": "Tráng lệ / Lộng lẫy"
+          },
+          {
+            "word": "組合",
+            "reading": "くみあい",
+            "meaning": "Sự kết hợp / Hiệp hội"
           }
         ],
         "grammar": [],
@@ -1416,7 +1441,7 @@
         "titleJp": "仕事(しごと)・時間管理(じかんかんり)",
         "category": "Từ vựng",
         "level": "N3",
-        "content": "Tổng hợp 59 từ vựng theo chủ đề của chương trình JPD316.",
+        "content": "Tổng hợp 62 từ vựng theo chủ đề của chương trình JPD316.",
         "vocabulary": [
           {
             "word": "有効",
@@ -1699,6 +1724,11 @@
             "meaning": "Nguy hiểm"
           },
           {
+            "word": "遊園地",
+            "reading": "ゆうえんち",
+            "meaning": "Công viên giải trí"
+          },
+          {
             "word": "登山",
             "reading": "とざん",
             "meaning": "Leo núi"
@@ -1712,6 +1742,16 @@
             "word": "頂上",
             "reading": "ちょうじょう",
             "meaning": "Đỉnh / Chóp"
+          },
+          {
+            "word": "浮く",
+            "reading": "うく",
+            "meaning": "Nổi / Lơ lửng"
+          },
+          {
+            "word": "残す",
+            "reading": "のこす",
+            "meaning": "Để lại / Bỏ lại"
           }
         ],
         "grammar": [],
@@ -1723,7 +1763,7 @@
         "titleJp": "施設(しせつ)・交通(こうつう)",
         "category": "Từ vựng",
         "level": "N3",
-        "content": "Tổng hợp 72 từ vựng theo chủ đề của chương trình JPD316.",
+        "content": "Tổng hợp 96 từ vựng theo chủ đề của chương trình JPD316.",
         "vocabulary": [
           {
             "word": "地域",
@@ -2084,6 +2124,126 @@
             "word": "針",
             "reading": "はり",
             "meaning": "Cây kim"
+          },
+          {
+            "word": "夕べ",
+            "reading": "ゆうべ",
+            "meaning": "Tối qua"
+          },
+          {
+            "word": "取り換える",
+            "reading": "とりかえる",
+            "meaning": "Thay mới / Thay thế"
+          },
+          {
+            "word": "事務室",
+            "reading": "じむしつ",
+            "meaning": "Phòng làm việc"
+          },
+          {
+            "word": "願う",
+            "reading": "ねがう",
+            "meaning": "Cầu mong"
+          },
+          {
+            "word": "隣",
+            "reading": "となり",
+            "meaning": "Bên cạnh"
+          },
+          {
+            "word": "在勤",
+            "reading": "ざいきん",
+            "meaning": "Đang làm việc tại"
+          },
+          {
+            "word": "在学",
+            "reading": "ざいがく",
+            "meaning": "Đang học tại"
+          },
+          {
+            "word": "講習",
+            "reading": "こうしゅう",
+            "meaning": "Huấn luyện / Khóa học ngắn hạn"
+          },
+          {
+            "word": "器具",
+            "reading": "きぐ",
+            "meaning": "Dụng cụ / Khí cụ"
+          },
+          {
+            "word": "有無",
+            "reading": "うむ",
+            "meaning": "Có hay không"
+          },
+          {
+            "word": "通年",
+            "reading": "つうねん",
+            "meaning": "Quanh năm"
+          },
+          {
+            "word": "持参",
+            "reading": "じさん",
+            "meaning": "Mang theo"
+          },
+          {
+            "word": "年齢",
+            "reading": "ねんれい",
+            "meaning": "Tuổi tác"
+          },
+          {
+            "word": "性別",
+            "reading": "せいべつ",
+            "meaning": "Giới tính"
+          },
+          {
+            "word": "返事",
+            "reading": "へんじ",
+            "meaning": "Trả lời"
+          },
+          {
+            "word": "天候",
+            "reading": "てんこう",
+            "meaning": "Thời tiết (vĩ mô)"
+          },
+          {
+            "word": "到着する",
+            "reading": "とうちゃくする",
+            "meaning": "Đến nơi (động từ)"
+          },
+          {
+            "word": "バレーボール",
+            "reading": "",
+            "meaning": "Bóng chuyền"
+          },
+          {
+            "word": "ヨガ",
+            "reading": "",
+            "meaning": "Yoga"
+          },
+          {
+            "word": "トレーニング",
+            "reading": "",
+            "meaning": "Tập luyện"
+          },
+          {
+            "word": "灰色",
+            "reading": "はいいろ",
+            "meaning": "Màu xám"
+          },
+          {
+            "word": "灰皿",
+            "reading": "はいざら",
+            "meaning": "Gạt tàn thuốc"
+          },
+          {
+            "word": "進める",
+            "reading": "すすめる",
+            "meaning": "Thúc đẩy / Tiến hành"
+          },
+          {
+            "word": "層",
+            "reading": "そう",
+            "meaning": "Tầng / Lớp"
           }
         ],
         "grammar": [],
@@ -2095,7 +2255,7 @@
         "titleJp": "災害(さいがい)・緊急(きんきゅう)",
         "category": "Từ vựng",
         "level": "N3",
-        "content": "Tổng hợp 110 từ vựng theo chủ đề của chương trình JPD316.",
+        "content": "Tổng hợp 133 từ vựng theo chủ đề của chương trình JPD316.",
         "vocabulary": [
           {
             "word": "緊急",
@@ -2646,6 +2806,121 @@
             "word": "人数",
             "reading": "にんずう",
             "meaning": "Số người"
+          },
+          {
+            "word": "欠く",
+            "reading": "かく",
+            "meaning": "Thiếu sót"
+          },
+          {
+            "word": "増える",
+            "reading": "ふえる",
+            "meaning": "Tăng lên"
+          },
+          {
+            "word": "減る",
+            "reading": "へる",
+            "meaning": "Giảm xuống"
+          },
+          {
+            "word": "訓練する",
+            "reading": "くんれんする",
+            "meaning": "Huấn luyện"
+          },
+          {
+            "word": "事項",
+            "reading": "じこう",
+            "meaning": "Điều khoản / Mục"
+          },
+          {
+            "word": "決して",
+            "reading": "けっして",
+            "meaning": "Tuyệt đối (không)"
+          },
+          {
+            "word": "いざという時",
+            "reading": "いざというとき",
+            "meaning": "Khi cần thiết / Lúc khẩn cấp"
+          },
+          {
+            "word": "いざという",
+            "reading": "いざという",
+            "meaning": "Khi cần / Lúc khẩn cấp (dạng rút gọn)"
+          },
+          {
+            "word": "影響",
+            "reading": "えいきょう",
+            "meaning": "Ảnh hưởng (danh từ)"
+          },
+          {
+            "word": "避難経路",
+            "reading": "ひなんけいろ",
+            "meaning": "Đường sơ tán"
+          },
+          {
+            "word": "指示",
+            "reading": "しじ",
+            "meaning": "Chỉ thị (danh từ)"
+          },
+          {
+            "word": "斜面",
+            "reading": "しゃめん",
+            "meaning": "Sườn dốc"
+          },
+          {
+            "word": "雨上がり",
+            "reading": "あめあがり",
+            "meaning": "Sau khi mưa tạnh"
+          },
+          {
+            "word": "飛ばす",
+            "reading": "とばす",
+            "meaning": "Làm bay"
+          },
+          {
+            "word": "崩す",
+            "reading": "くずす",
+            "meaning": "Làm sập"
+          },
+          {
+            "word": "すりむく",
+            "reading": "",
+            "meaning": "Trầy xước da"
+          },
+          {
+            "word": "うずくまる",
+            "reading": "",
+            "meaning": "Co rùm người lại"
+          },
+          {
+            "word": "国道",
+            "reading": "こくどう",
+            "meaning": "Đường quốc lộ"
+          },
+          {
+            "word": "陸地",
+            "reading": "りくち",
+            "meaning": "Đất liền"
+          },
+          {
+            "word": "被災",
+            "reading": "ひさい",
+            "meaning": "Bị thiên tai"
+          },
+          {
+            "word": "負担",
+            "reading": "ふたん",
+            "meaning": "Gánh nặng / Chi phí"
+          },
+          {
+            "word": "普段",
+            "reading": "ふだん",
+            "meaning": "Thường ngày"
+          },
+          {
+            "word": "貯水槽",
+            "reading": "ちょすいそう",
+            "meaning": "Bể chứa nước"
           }
         ],
         "grammar": [],
