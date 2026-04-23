@@ -1,17 +1,11 @@
 package com.fsoft.japaneselearning.controller;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fsoft.japaneselearning.model.Course;
 import com.fsoft.japaneselearning.model.Lesson;
-import org.springframework.core.io.ClassPathResource;
+import com.fsoft.japaneselearning.service.CourseService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.annotation.PostConstruct;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,40 +13,26 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class LessonController {
 
-    private List<Course> courses = new ArrayList<>();
+    private final CourseService courseService;
 
-    @PostConstruct
-    public void init() throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        InputStream is = new ClassPathResource("courses.json").getInputStream();
-        courses = mapper.readValue(is, new TypeReference<List<Course>>() {});
+    public LessonController(CourseService courseService) {
+        this.courseService = courseService;
     }
 
     // === Course endpoints ===
 
     @GetMapping("/courses")
     public ResponseEntity<List<Course>> getAllCourses() {
+        List<Course> courses = courseService.getAllCourses();
         // Return courses without lessons for listing
-        List<Course> summary = courses.stream().map(c -> {
-            Course s = new Course();
-            s.setId(c.getId());
-            s.setName(c.getName());
-            s.setNameJp(c.getNameJp());
-            s.setDescription(c.getDescription());
-            s.setLevel(c.getLevel());
-            s.setIcon(c.getIcon());
-            s.setLessons(null);
-            return s;
-        }).toList();
-        return ResponseEntity.ok(summary);
+        courses.forEach(c -> c.setLessons(null));
+        return ResponseEntity.ok(courses);
     }
 
     @GetMapping("/courses/{courseId}")
     public ResponseEntity<Course> getCourseById(@PathVariable String courseId) {
-        Optional<Course> course = courses.stream()
-                .filter(c -> c.getId().equals(courseId))
-                .findFirst();
-        return course.map(ResponseEntity::ok)
+        return courseService.getCourseById(courseId)
+                .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
@@ -60,24 +40,26 @@ public class LessonController {
 
     @GetMapping("/courses/{courseId}/lessons")
     public ResponseEntity<List<Lesson>> getLessonsByCourse(@PathVariable String courseId) {
-        Optional<Course> course = courses.stream()
-                .filter(c -> c.getId().equals(courseId))
-                .findFirst();
-        return course.map(c -> ResponseEntity.ok(c.getLessons()))
-                .orElse(ResponseEntity.notFound().build());
+        List<Lesson> lessons = courseService.getLessonsByCourse(courseId);
+        return ResponseEntity.ok(lessons);
     }
 
     @GetMapping("/courses/{courseId}/lessons/{lessonId}")
-    public ResponseEntity<Lesson> getLesson(@PathVariable String courseId, @PathVariable Long lessonId) {
-        Optional<Course> course = courses.stream()
-                .filter(c -> c.getId().equals(courseId))
-                .findFirst();
-        if (course.isEmpty()) return ResponseEntity.notFound().build();
-
-        Optional<Lesson> lesson = course.get().getLessons().stream()
-                .filter(l -> l.getId().equals(lessonId))
-                .findFirst();
-        return lesson.map(ResponseEntity::ok)
+    public ResponseEntity<Lesson> getLesson(@PathVariable String courseId,
+                                             @PathVariable Long lessonId) {
+        return courseService.getLessonById(lessonId)
+                .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    // === Search ===
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Lesson>> search(@RequestParam String q) {
+        if (q == null || q.trim().isEmpty()) {
+            return ResponseEntity.ok(List.of());
+        }
+        List<Lesson> results = courseService.searchLessons(q.trim());
+        return ResponseEntity.ok(results);
     }
 }

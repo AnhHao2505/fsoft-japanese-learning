@@ -1,86 +1,115 @@
-export default function LessonDetail({ lesson }) {
-  if (!lesson) {
-    return (
-      <div className="welcome-screen">
-        <div className="welcome-icon">📚</div>
-        <h2>Chào mừng đến với 日本語学習</h2>
-        <p>Chọn một bài học từ sidebar để bắt đầu hành trình học tiếng Nhật tại FPT Software 🚀</p>
-      </div>
-    );
-  }
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { ArrowLeft, BookOpen, Layers } from 'lucide-react';
+import api from '../utils/api';
+
+const LessonDetail = () => {
+  const { id } = useParams();
+  const [lesson, setLesson] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const fetchLesson = async () => {
+      try {
+        setLoading(true);
+        // Hardcode jpd316 as courseId
+        const response = await api.get(`/courses/jpd316/lessons/${id}`);
+        setLesson(response.data);
+      } catch (err) {
+        setError('Không thể tải dữ liệu bài học');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchLesson();
+  }, [id]);
+
+  if (loading) return <div className="card"><div className="card-body">Đang tải nội dung...</div></div>;
+  if (error) return <div className="error-box">{error}</div>;
+  if (!lesson) return <div className="error-box">Bài học không tồn tại.</div>;
 
   return (
-    <div className="lesson-detail">
-      <header className="lesson-detail-header">
-        <div className="meta-tags">
-          <span className="lesson-tag tag-level">{lesson.level}</span>
-          <span className="lesson-tag tag-category">{lesson.category}</span>
+    <div className="card">
+      <div className="card-body">
+        <Link to="/" className="btn btn-ghost" style={{ padding: '0', marginBottom: '24px', display: 'inline-flex' }}>
+          <ArrowLeft size={18} /> <span style={{ marginLeft: '8px' }}>Quay lại danh sách</span>
+        </Link>
+        
+        <div className="detail-header">
+          <div className="detail-meta">
+            <span>{lesson.category}</span>
+            <span>•</span>
+            <span>{lesson.level || 'N3'}</span>
+          </div>
+          <h1 className="detail-title">{lesson.title}</h1>
+          {lesson.titleJp && <h2 className="detail-title-jp">{lesson.titleJp}</h2>}
         </div>
-        <h1>{lesson.title}</h1>
-        <div className="title-jp">{lesson.titleJp}</div>
-      </header>
 
-      <div className="lesson-description">
-        {lesson.content}
-      </div>
+        <div className="detail-content">
+          {lesson.content && (
+            <div style={{ marginBottom: '32px', lineHeight: '1.7' }}>
+              {lesson.content}
+            </div>
+          )}
 
-      {/* Vocabulary Section */}
-      {lesson.vocabulary && lesson.vocabulary.length > 0 && (
-        <div className="section-card">
-          <h2 className="section-title">
-            <span className="icon">📝</span>
-            Từ vựng (語彙)
-          </h2>
-          <table className="vocab-table">
-            <thead>
-              <tr>
-                <th>Từ vựng</th>
-                <th>Phiên âm</th>
-                <th>Nghĩa</th>
-              </tr>
-            </thead>
-            <tbody>
-              {lesson.vocabulary.map((v, i) => (
-                <tr key={i}>
-                  <td className="vocab-word">{v.word}</td>
-                  <td className="vocab-reading">{v.reading}</td>
-                  <td className="vocab-meaning">{v.meaning}</td>
-                </tr>
+          {/* Grammar Section */}
+          {lesson.grammar && lesson.grammar.length > 0 && (
+            <div style={{ marginBottom: '32px' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Layers size={20} className="text-primary" /> Mẫu Ngữ Pháp
+              </h3>
+              {lesson.grammar.map((g, idx) => (
+                <div key={idx} className="grammar-block">
+                  {g}
+                </div>
               ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+            </div>
+          )}
 
-      {/* Grammar Section */}
-      {lesson.grammar && lesson.grammar.length > 0 && (
-        <div className="section-card">
-          <h2 className="section-title">
-            <span className="icon">📖</span>
-            Ngữ pháp (文法)
-          </h2>
-          <ul className="grammar-list">
-            {lesson.grammar.map((g, i) => (
-              <li key={i}>{g}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+          {/* Vocabulary Section */}
+          {lesson.vocabulary && lesson.vocabulary.length > 0 && (
+            <div style={{ marginBottom: '32px' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <BookOpen size={20} className="text-primary" /> Từ Vựng Cần Nhớ
+              </h3>
+              <table className="data-table">
+                <thead>
+                  <tr>
+                    <th>Từ vựng</th>
+                    <th>Cách đọc</th>
+                    <th>Ý nghĩa</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lesson.vocabulary.map((vocab, vIdx) => (
+                    <tr key={vIdx}>
+                      <td className="jp-text text-primary">{vocab.word}</td>
+                      <td className="jp-text reading-text">{vocab.reading}</td>
+                      <td>{vocab.meaning}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
 
-      {/* Examples Section */}
-      {lesson.examples && lesson.examples.length > 0 && (
-        <div className="section-card">
-          <h2 className="section-title">
-            <span className="icon">💬</span>
-            Ví dụ (例文)
-          </h2>
-          <ul className="example-list">
-            {lesson.examples.map((ex, i) => (
-              <li key={i}>{ex}</li>
-            ))}
-          </ul>
+          {/* Examples Section */}
+          {lesson.examples && lesson.examples.length > 0 && (
+            <div>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '16px' }}>Ví dụ tham khảo</h3>
+              {lesson.examples.map((ex, idx) => (
+                <div key={idx} className="example-block">
+                  {ex}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
-}
+};
+
+export default LessonDetail;
