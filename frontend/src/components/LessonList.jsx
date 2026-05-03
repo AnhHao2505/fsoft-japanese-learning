@@ -46,6 +46,12 @@ const LessonList = () => {
             Tất cả
           </button>
           <button 
+            className={`tab ${activeTab === 'bai_doc' ? 'active' : ''}`}
+            onClick={() => window.location.href = '/readings'}
+          >
+            Bài Đọc
+          </button>
+          <button 
             className={`tab ${activeTab === 'bg' ? 'active' : ''}`}
             onClick={() => setActiveTab('bg')}
           >

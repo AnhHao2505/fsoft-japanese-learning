@@ -21,23 +21,23 @@ const Navbar = () => {
           </div>
           <span>FPT Japanese</span>
         </Link>
-        
+
         <div className="search-box">
           <Search size={18} className="search-icon" />
-          <input 
-            type="text" 
-            className="search-input" 
-            placeholder="Tìm kiếm từ vựng, ngữ pháp..." 
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Tìm kiếm từ vựng, ngữ pháp..."
           />
         </div>
-        
+
         <div className="nav-actions">
           {user ? (
             <>
               <button title="Hồ sơ cá nhân" className="avatar-btn">
                 <User size={18} />
               </button>
-              <button 
+              <button
                 onClick={handleLogout}
                 className="btn btn-ghost"
                 title="Đăng xuất"
