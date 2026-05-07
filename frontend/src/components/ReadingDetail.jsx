@@ -167,14 +167,37 @@ const ReadingDetail = () => {
 
           {/* Notes Section */}
           {reading.notes && reading.notes.trim().length > 0 && (() => {
-            // Parse each note line to separate JP part from Vietnamese meaning
             const parseNoteLine = (line) => {
-              // Pattern: "1. JP部分: Vietnamese meaning" or "1. JP部分 Vietnamese meaning"
-              const match = line.match(/^(\d+\.\s*)(.+?)[:：]\s*(.+)$/);
-              if (match) {
-                return { number: match[1], jp: match[2].trim(), meaning: match[3].trim() };
+              const numMatch = line.match(/^(\d+\.\s*)(.*)$/);
+              if (!numMatch) return { number: '', jp: '', meaning: line };
+              
+              const number = numMatch[1];
+              const rest = numMatch[2];
+              
+              const colonSplit = rest.split(/[:：]/);
+              if (colonSplit.length > 1) {
+                return { number, jp: colonSplit[0].trim(), meaning: colonSplit.slice(1).join(':').trim() };
               }
-              return { number: '', jp: '', meaning: line };
+              
+              const dashSplit = rest.split(/\s+-\s+/);
+              if (dashSplit.length > 1) {
+                return { number, jp: dashSplit[0].trim(), meaning: dashSplit.slice(1).join(' - ').trim() };
+              }
+              
+              const lastJpMatch = rest.match(/[\u3040-\u30FF\u4E00-\u9FAF）)]/g);
+              if (lastJpMatch) {
+                const lastJpChar = lastJpMatch.pop();
+                const lastJpCharIndex = rest.lastIndexOf(lastJpChar);
+                if (lastJpCharIndex !== -1 && lastJpCharIndex < rest.length - 1) {
+                  return {
+                    number,
+                    jp: rest.substring(0, lastJpCharIndex + 1).trim(),
+                    meaning: rest.substring(lastJpCharIndex + 1).replace(/^[-\s]+/, '')
+                  };
+                }
+              }
+              
+              return { number, jp: '', meaning: rest };
             };
 
             return (
