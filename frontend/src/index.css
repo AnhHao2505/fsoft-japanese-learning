@@ -625,3 +625,222 @@ button {
   font-size: 1rem;
   color: var(--text-main);
 }
+
+/* =========================================
+   UI/UX Enhancements (Task implementation)
+   ========================================= */
+
+/* 1. Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* 2. Skeleton Loading */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.skeleton-box {
+  background: #1e293b;
+  background-image: linear-gradient(
+    to right,
+    #1e293b 0%,
+    #334155 20%,
+    #1e293b 40%,
+    #1e293b 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 100%; 
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards; 
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  border-radius: 4px;
+}
+
+/* 3. Toast Notifications */
+.toast-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 250px;
+  max-width: 350px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  font-weight: 500;
+  color: white;
+}
+
+.toast-success {
+  background-color: var(--success);
+  border-left: 4px solid #047857;
+}
+
+.toast-error {
+  background-color: var(--danger);
+  border-left: 4px solid #b91c1c;
+}
+
+.toast-close {
+  color: white;
+  opacity: 0.8;
+  font-size: 1.2rem;
+  margin-left: 12px;
+  padding: 0 4px;
+}
+.toast-close:hover {
+  opacity: 1;
+}
+
+/* 4. Scroll to Top */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.scroll-to-top:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+/* 5. Auth Aurora Background */
+.aurora-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aurora-bg {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15), transparent 60%),
+              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1), transparent 50%);
+  animation: aurora-rotate 20s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes aurora-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.auth-form-card {
+  backdrop-filter: blur(10px);
+  background-color: rgba(21, 30, 50, 0.85);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+.auth-form-card:hover {
+  transform: translateY(-2px);
+}
+
+.input-animated {
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+.input-animated:focus {
+  background-color: rgba(0,0,0,0.2);
+}
+
+/* 6. Mobile Navbar */
+.mobile-menu-btn {
+  display: none;
+  color: var(--text-main);
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .nav-actions {
+    display: none; /* Hide desktop actions */
+  }
+  
+  .search-box {
+    display: none; /* Hide search on mobile for now */
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav-links.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background-color: var(--bg-surface);
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    gap: 16px;
+  }
+}

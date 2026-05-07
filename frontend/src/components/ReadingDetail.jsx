@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Layers } from 'lucide-react';
+import { ArrowLeft, BookOpen, Layers, FileText } from 'lucide-react';
 import api from '../utils/api';
+import SkeletonLoader from './SkeletonLoader';
+
+// Helper: split text that may contain literal "\n" or real newlines
+const splitLines = (text) => {
+  if (!text) return [];
+  return text.split(/\\n|\n/).map(s => s.trim()).filter(Boolean);
+};
 
 const ReadingDetail = () => {
   const { id } = useParams();
@@ -26,7 +33,7 @@ const ReadingDetail = () => {
     fetchReading();
   }, [id]);
 
-  if (loading) return <div className="card"><div className="card-body">Đang tải nội dung...</div></div>;
+  if (loading) return <SkeletonLoader type="detail" />;
   if (error) return <div className="error-box">{error}</div>;
   if (!reading) return <div className="error-box">Bài đọc không tồn tại.</div>;
 
@@ -63,7 +70,7 @@ const ReadingDetail = () => {
           {/* Passage Container */}
           <div className="reading-passage-container mb-5">
             <div className="reading-passage">
-              {reading.passage.split('\n').map((paragraph, index) => (
+              {splitLines(reading.passage).map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
@@ -73,7 +80,7 @@ const ReadingDetail = () => {
               <div className="reading-translation mt-4 p-4 rounded bg-dark border border-secondary">
                 <h5 className="text-primary mb-3">Bản dịch:</h5>
                 <div className="text-light" style={{ opacity: 0.9 }}>
-                  {reading.passageTranslation.split('\n').map((paragraph, index) => (
+                  {splitLines(reading.passageTranslation).map((paragraph, index) => (
                     <p key={index} className="mb-2">{paragraph}</p>
                   ))}
                 </div>
@@ -122,6 +129,83 @@ const ReadingDetail = () => {
               ))}
             </div>
           )}
+
+          {/* Difficult Kanji Section */}
+          {reading.difficultKanji && reading.difficultKanji.trim().length > 0 && (
+            <div style={{ marginBottom: '32px' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <BookOpen size={20} className="text-primary" /> Từ vựng Hán tự khó (N3)
+              </h3>
+              <table className="data-table">
+                <thead>
+                  <tr>
+                    <th>Từ vựng</th>
+                    <th>Cách đọc</th>
+                    <th>Ý nghĩa</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {splitLines(reading.difficultKanji).map((line, idx) => {
+                    // Split by dash/tab separators
+                    const parts = line.split(/[-–―\t]+/).map(s => s.trim()).filter(Boolean);
+                    if (parts.length === 0) return null;
+                    const word = parts[0] || '';
+                    const readingText = parts.length >= 3 ? parts[1] : '';
+                    const meaning = parts.length >= 3 ? parts.slice(2).join(', ') : parts.slice(1).join(', ');
+                    return (
+                      <tr key={idx}>
+                        <td className="jp-text text-primary" style={{ fontWeight: 600 }}>{word}</td>
+                        <td className="jp-text" style={{ color: 'var(--text-muted)' }}>{readingText}</td>
+                        <td>{meaning}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {/* Notes Section */}
+          {reading.notes && reading.notes.trim().length > 0 && (() => {
+            // Parse each note line to separate JP part from Vietnamese meaning
+            const parseNoteLine = (line) => {
+              // Pattern: "1. JP部分: Vietnamese meaning" or "1. JP部分 Vietnamese meaning"
+              const match = line.match(/^(\d+\.\s*)(.+?)[:：]\s*(.+)$/);
+              if (match) {
+                return { number: match[1], jp: match[2].trim(), meaning: match[3].trim() };
+              }
+              return { number: '', jp: '', meaning: line };
+            };
+
+            return (
+              <div style={{ marginBottom: '32px', padding: '24px 28px', borderRadius: '12px', backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-color)' }}>
+                <h3 style={{ fontSize: '1.3rem', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--warning)' }}>
+                  <FileText size={22} /> Ghi ch&#250;
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                  {splitLines(reading.notes).map((line, idx) => {
+                    const parsed = parseNoteLine(line);
+                    return (
+                      <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '1.05rem', lineHeight: '1.75', color: 'var(--text-main)' }}>
+                        <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0, fontSize: '1.1rem', marginTop: '1px' }}>&#8226;</span>
+                        <span>
+                          {parsed.jp ? (
+                            <>
+                              <span style={{ fontWeight: 600, color: 'var(--primary)' }}>{parsed.number}{parsed.jp}</span>
+                              <span style={{ color: 'var(--text-muted)', margin: '0 6px' }}>&#8594;</span>
+                              <span>{parsed.meaning}</span>
+                            </>
+                          ) : (
+                            <span>{parsed.meaning}</span>
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })()}
         </div>
       </div>
     </div>

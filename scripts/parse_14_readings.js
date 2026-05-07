@@ -33,7 +33,9 @@ for (let i = 0; i < lines.length; i++) {
             passageLines: [],
             translationLines: [],
             vocab: [],
-            grammar: []
+            grammar: [],
+            notesLines: [],
+            kanjiLines: []
         };
         mode = 'passage';
         if (baiMatch) continue; // skip the "Bài X" line
@@ -50,19 +52,14 @@ for (let i = 0; i < lines.length; i++) {
     }
 
     if (mode === 'passage') {
-        // Attempt to separate JP and VN
-        // If the line has mostly Japanese characters, it's JP
-        // If it's mostly Vietnamese, it's VN translation
-        if (isJapanese(line)) {
+        if (/^\d+\./.test(line)) {
+            currentReading.notesLines.push(line);
+        } else if (line.match(/[-–―\t]/) && isJapanese(line) && line.length < 150) {
+            currentReading.kanjiLines.push(line);
+        } else if (isJapanese(line)) {
             currentReading.passageLines.push(line);
         } else {
-            // It might be translation, or it might be a numbering like "1.", "2."
-            if (/^\d+\./.test(line)) {
-                // Probably a vocabulary or grammar point mixed in the passage
-                currentReading.passageLines.push(line);
-            } else {
-                currentReading.translationLines.push(line);
-            }
+            currentReading.translationLines.push(line);
         }
     } else if (mode === 'vocab') {
         // format: word - reading - meaning
@@ -80,29 +77,21 @@ if (currentReading) {
 }
 
 // Generate SQL
-let sql = `-- V6: Seed 14 Readings\n\n`;
-sql += `DELETE FROM reading_grammar;\nDELETE FROM reading_vocabularies;\nDELETE FROM readings;\n\n`;
+let sql = `-- V8: Update Readings Data with Notes and Kanji\n\n`;
 
 readings.forEach((r, idx) => {
     const passage = r.passageLines.join('\\n').replace(/'/g, "''");
     const translation = r.translationLines.join('\\n').replace(/'/g, "''");
-    const title = r.title.replace(/'/g, "''");
-    const sortOrder = idx + 1;
+    const notes = r.notesLines.join('\\n').replace(/'/g, "''");
+    const kanji = r.kanjiLines.join('\\n').replace(/'/g, "''");
 
-    sql += `INSERT INTO readings (id, course_id, title, title_jp, passage, passage_translation, sort_order)\n`;
-    sql += `VALUES (${r.id}, 'jpd316', '${title}', '', '${passage}', '${translation}', ${sortOrder});\n\n`;
-
-    if (r.vocab.length > 0) {
-        sql += `INSERT INTO reading_vocabularies (reading_id, word, reading, meaning, sort_order) VALUES\n`;
-        const vVals = r.vocab.map((v, i) => {
-            const w = v.word.replace(/'/g, "''");
-            const rt = v.readingText.replace(/'/g, "''");
-            const m = v.meaning.replace(/'/g, "''");
-            return `(${r.id}, '${w}', '${rt}', '${m}', ${i+1})`;
-        });
-        sql += vVals.join(',\n') + ';\n\n';
-    }
+    sql += `UPDATE readings \n`;
+    sql += `SET passage = '${passage}', \n`;
+    sql += `    passage_translation = '${translation}', \n`;
+    sql += `    notes = '${notes}', \n`;
+    sql += `    difficult_kanji = '${kanji}' \n`;
+    sql += `WHERE id = ${r.id};\n\n`;
 });
 
-fs.writeFileSync('../backend/src/main/resources/db/migration/V6__seed_14_readings.sql', sql);
-console.log(`Generated V6 SQL with ${readings.length} readings`);
+fs.writeFileSync('../backend/src/main/resources/db/migration/V8__update_readings_data.sql', sql);
+console.log(`Generated V8 SQL with ${readings.length} reading updates`);

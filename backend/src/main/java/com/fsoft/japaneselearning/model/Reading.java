@@ -42,6 +42,12 @@ public class Reading {
     @Column(name = "sort_order")
     private Integer sortOrder = 0;
 
+    @Column(columnDefinition = "TEXT")
+    private String notes;
+
+    @Column(name = "difficult_kanji", columnDefinition = "TEXT")
+    private String difficultKanji;
+
     @OneToMany(mappedBy = "reading", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonManagedReference
     @OrderBy("sortOrder ASC, id ASC")

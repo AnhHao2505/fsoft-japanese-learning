@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, AuthContext } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext';
+import { ToastProvider } from './context/ToastContext';
 import Navbar from './components/Navbar';
 import RightSidebar from './components/RightSidebar';
+import ScrollToTop from './components/ScrollToTop';
 import LessonList from './components/LessonList';
 import LessonDetail from './components/LessonDetail';
 import LoginPage from './pages/LoginPage';
@@ -39,10 +41,12 @@ const AuthLayout = ({ children }) => {
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          {/* Main App Routes */}
+    <ToastProvider>
+      <AuthProvider>
+        <Router>
+          <ScrollToTop />
+          <Routes>
+            {/* Main App Routes */}
           <Route path="/" element={<MainLayout><LessonList /></MainLayout>} />
           <Route path="/lessons/:id" element={<MainLayout><LessonDetail /></MainLayout>} />
           <Route path="/readings" element={<MainLayout hideSidebar={true}><ReadingList /></MainLayout>} />
@@ -57,6 +61,7 @@ function App() {
         </Routes>
       </Router>
     </AuthProvider>
+    </ToastProvider>
   );
 }
 

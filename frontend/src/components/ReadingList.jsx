@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BookOpen, HelpCircle } from 'lucide-react';
 import api from '../utils/api';
+import SkeletonLoader from './SkeletonLoader';
 
 const ReadingList = () => {
   const [readings, setReadings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('bai_doc');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchReadings = async () => {
@@ -23,7 +25,7 @@ const ReadingList = () => {
   }, []);
 
   if (loading) {
-    return <div className="card"><div className="card-body">Đang tải danh sách bài đọc...</div></div>;
+    return <SkeletonLoader type="list" count={5} />;
   }
 
   return (
@@ -32,7 +34,7 @@ const ReadingList = () => {
         <div className="tabs">
           <button 
             className={`tab ${activeTab === 'all' ? 'active' : ''}`}
-            onClick={() => window.location.href = '/'}
+            onClick={() => navigate('/')}
           >
             Tất cả
           </button>
@@ -44,13 +46,13 @@ const ReadingList = () => {
           </button>
           <button 
             className={`tab ${activeTab === 'bg' ? 'active' : ''}`}
-            onClick={() => { window.location.href = '/'; }} // Simple redirect to lesson list
+            onClick={() => navigate('/')}
           >
             Bài Giảng Ngữ Pháp
           </button>
           <button 
             className={`tab ${activeTab === 'tu_vung' ? 'active' : ''}`}
-            onClick={() => { window.location.href = '/'; }}
+            onClick={() => navigate('/')}
           >
             Từ Vựng
           </button>
@@ -60,7 +62,7 @@ const ReadingList = () => {
       <div className="card-body" style={{padding: '12px'}}>
         <div className="lesson-list">
           {readings.map((reading, idx) => (
-            <Link to={`/readings/${reading.id}`} className="lesson-item" key={reading.id}>
+            <Link to={`/readings/${reading.id}`} className="lesson-item fade-in-up" style={{ animationDelay: `${idx * 0.05}s` }} key={reading.id}>
               <div className="lesson-meta">
                 <span className="lesson-category">ĐỌC</span>
                 <span className="lesson-number">{String(idx + 1).padStart(2, '0')}</span>

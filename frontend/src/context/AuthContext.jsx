@@ -1,4 +1,5 @@
-import React, { createContext, useState, useEffect } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import React, { createContext, useState, useEffect, useCallback } from 'react';
 import * as authUtils from '../utils/auth';
 import api from '../utils/api';
 
@@ -7,6 +8,12 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(authUtils.getUser());
   const [isLoading, setIsLoading] = useState(true);
+
+  const logout = useCallback(() => {
+    authUtils.removeToken();
+    authUtils.removeUser();
+    setUser(null);
+  }, []);
 
   useEffect(() => {
     const fetchCurrentUser = async () => {
@@ -46,11 +53,6 @@ export const AuthProvider = ({ children }) => {
     return userData;
   };
 
-  const logout = () => {
-    authUtils.removeToken();
-    authUtils.removeUser();
-    setUser(null);
-  };
 
   return (
     <AuthContext.Provider value={{ user, isLoading, login, register, logout }}>

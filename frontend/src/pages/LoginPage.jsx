@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -9,6 +10,7 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   
   const { login } = useContext(AuthContext);
+  const { showToast } = useToast();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -18,6 +20,7 @@ const LoginPage = () => {
     
     try {
       await login(username, password);
+      showToast('Đăng nhập thành công! 🎉', 'success');
       navigate('/');
     } catch (err) {
       if (err.response && err.response.data && err.response.data.error) {
@@ -31,9 +34,11 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="card">
-        <div className="card-body" style={{ padding: '40px' }}>
+    <div className="aurora-wrapper" style={{ width: '100vw', margin: '-24px -20px' }}>
+      <div className="aurora-bg"></div>
+      <div className="auth-container" style={{ position: 'relative', zIndex: 1 }}>
+        <div className="card auth-form-card">
+          <div className="card-body" style={{ padding: '40px' }}>
           <div className="auth-header">
             <h1>Chào mừng trở lại</h1>
             <p>Đăng nhập để vào FPT Japanese Learning</p>
@@ -46,7 +51,7 @@ const LoginPage = () => {
               <label className="form-label">Tên đăng nhập</label>
               <input 
                 type="text" 
-                className="form-input" 
+                className="form-input input-animated" 
                 placeholder="Nhập username của bạn"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -58,7 +63,7 @@ const LoginPage = () => {
               <label className="form-label">Mật khẩu</label>
               <input 
                 type="password" 
-                className="form-input" 
+                className="form-input input-animated" 
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -80,6 +85,7 @@ const LoginPage = () => {
             Chưa có tài khoản? <Link to="/register" style={{ fontWeight: '500' }}>Đăng ký ngay</Link>
           </div>
         </div>
+    </div>
       </div>
     </div>
   );

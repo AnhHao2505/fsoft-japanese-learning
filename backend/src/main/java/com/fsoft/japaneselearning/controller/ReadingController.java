@@ -25,6 +25,8 @@ public class ReadingController {
             r.setPassage(null);
             r.setVocabularies(null);
             r.setGrammars(null);
+            r.setNotes(null);
+            r.setDifficultKanji(null);
         });
         return ResponseEntity.ok(readings);
     }

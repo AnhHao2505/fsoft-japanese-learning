@@ -1,14 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { BookOpen, Search, LogOut, User } from 'lucide-react';
+import { BookOpen, Search, LogOut, User, Menu, X } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
+  const { showToast } = useToast();
   const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
+    showToast('Đã đăng xuất', 'success');
     navigate('/login');
   };
 
@@ -31,7 +35,14 @@ const Navbar = () => {
           />
         </div>
 
-        <div className="nav-actions">
+        <button 
+          className="mobile-menu-btn" 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        <div className={`nav-actions nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           {user ? (
             <>
               <button title="Hồ sơ cá nhân" className="avatar-btn">
@@ -47,8 +58,8 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/login" className="btn btn-ghost">Đăng nhập</Link>
-              <Link to="/register" className="btn btn-primary">Đăng ký</Link>
+              <Link to="/login" className="btn btn-ghost" onClick={() => setMobileMenuOpen(false)}>Đăng nhập</Link>
+              <Link to="/register" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Đăng ký</Link>
             </>
           )}
         </div>

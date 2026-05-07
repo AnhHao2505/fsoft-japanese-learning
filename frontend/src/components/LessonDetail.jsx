@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Layers } from 'lucide-react';
 import api from '../utils/api';
+import SkeletonLoader from './SkeletonLoader';
 
 const LessonDetail = () => {
   const { id } = useParams();
@@ -26,7 +27,7 @@ const LessonDetail = () => {
     fetchLesson();
   }, [id]);
 
-  if (loading) return <div className="card"><div className="card-body">Đang tải nội dung...</div></div>;
+  if (loading) return <SkeletonLoader type="detail" />;
   if (error) return <div className="error-box">{error}</div>;
   if (!lesson) return <div className="error-box">Bài học không tồn tại.</div>;
 
