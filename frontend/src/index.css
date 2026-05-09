@@ -7,9 +7,9 @@
   --bg-surface-hover: #1E2943;
   --bg-surface-active: #263352;
   
-  --primary: #3B82F6; /* Bright blue accent */
-  --primary-hover: #60A5FA;
-  --primary-focus: rgba(59, 130, 246, 0.2);
+  --primary: #2563EB; /* Royal blue, not too bright */
+  --primary-hover: #3B82F6;
+  --primary-focus: rgba(37, 99, 235, 0.2);
   
   --accent: #F59E0B; /* Amber for highlights/badges */
   --accent-soft: rgba(245, 158, 11, 0.15);

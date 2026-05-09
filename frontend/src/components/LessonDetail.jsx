@@ -78,9 +78,9 @@ const LessonDetail = () => {
               <table className="data-table">
                 <thead>
                   <tr>
-                    <th>Từ vựng</th>
+                    <th>Hán Tự</th>
                     <th>Cách đọc</th>
-                    <th>Ý nghĩa</th>
+                    <th>Nghĩa</th>
                   </tr>
                 </thead>
                 <tbody>

@@ -46,4 +46,16 @@ public class CourseService {
     public List<Lesson> searchLessons(String keyword) {
         return lessonRepository.searchByKeyword(keyword);
     }
+
+    public List<com.fsoft.japaneselearning.model.Vocabulary> getAllVocabularies() {
+        return vocabularyRepository.findAll();
+    }
+
+    public List<com.fsoft.japaneselearning.model.Vocabulary> getVocabulariesByCourse(String courseId) {
+        return vocabularyRepository.findByCourseId(courseId);
+    }
+
+    public List<String> getGrammarsByCourse(String courseId) {
+        return lessonRepository.findAllGrammarsByCourseId(courseId);
+    }
 }

@@ -23,7 +23,7 @@ const Navbar = () => {
           <div className="nav-brand-icon">
             <BookOpen size={20} />
           </div>
-          <span>FPT Japanese</span>
+          <span>Japanese Learning Hub</span>
         </Link>
 
         <div className="search-box">

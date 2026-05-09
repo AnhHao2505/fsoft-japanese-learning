@@ -97,9 +97,9 @@ const ReadingDetail = () => {
               <table className="data-table">
                 <thead>
                   <tr>
-                    <th>Từ vựng</th>
+                    <th>Hán Tự</th>
                     <th>Cách đọc</th>
-                    <th>Ý nghĩa</th>
+                    <th>Nghĩa</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -139,9 +139,9 @@ const ReadingDetail = () => {
               <table className="data-table">
                 <thead>
                   <tr>
-                    <th>Từ vựng</th>
+                    <th>Hán Tự</th>
                     <th>Cách đọc</th>
-                    <th>Ý nghĩa</th>
+                    <th>Nghĩa</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -201,31 +201,35 @@ const ReadingDetail = () => {
             };
 
             return (
-              <div style={{ marginBottom: '32px', padding: '24px 28px', borderRadius: '12px', backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-color)' }}>
-                <h3 style={{ fontSize: '1.3rem', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--warning)' }}>
-                  <FileText size={22} /> Ghi ch&#250;
+              <div style={{ marginBottom: '32px' }}>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--warning)' }}>
+                  <FileText size={20} /> Ghi chú
                 </h3>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                  {splitLines(reading.notes).map((line, idx) => {
-                    const parsed = parseNoteLine(line);
-                    return (
-                      <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '1.05rem', lineHeight: '1.75', color: 'var(--text-main)' }}>
-                        <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0, fontSize: '1.1rem', marginTop: '1px' }}>&#8226;</span>
-                        <span>
-                          {parsed.jp ? (
-                            <>
-                              <span style={{ fontWeight: 600, color: 'var(--primary)' }}>{parsed.number}{parsed.jp}</span>
-                              <span style={{ color: 'var(--text-muted)', margin: '0 6px' }}>&#8594;</span>
-                              <span>{parsed.meaning}</span>
-                            </>
-                          ) : (
-                            <span>{parsed.meaning}</span>
-                          )}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <div style={{ overflowX: 'auto' }}>
+                  <table className="data-table">
+                    <thead>
+                      <tr>
+                        <th style={{ width: '60px', textAlign: 'center' }}>STT</th>
+                        <th style={{ width: '30%' }}>Từ / Cụm từ</th>
+                        <th>Giải thích</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {splitLines(reading.notes).map((line, idx) => {
+                        const parsed = parseNoteLine(line);
+                        // Get clean STT
+                        const stt = parsed.number ? parsed.number.replace('.', '').trim() : (idx + 1);
+                        return (
+                          <tr key={idx}>
+                            <td style={{ textAlign: 'center', color: 'var(--text-muted)', fontWeight: 'bold' }}>{stt}</td>
+                            <td className="jp-text text-primary" style={{ fontWeight: 600, fontSize: '1.1rem' }}>{parsed.jp || '-'}</td>
+                            <td>{parsed.meaning}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             );
           })()}

@@ -11,6 +11,12 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ReadingList from './components/ReadingList';
 import ReadingDetail from './components/ReadingDetail';
+import VocabularyList from './components/VocabularyList';
+import VocabularyDetail from './components/VocabularyDetail';
+import GrammarList from './components/GrammarList';
+import GrammarDetail from './components/GrammarDetail';
+
+import Home from './components/Home';
 
 // Layout wrapper for authenticated/standard pages
 const MainLayout = ({ children, hideSidebar }) => {
@@ -47,10 +53,15 @@ function App() {
           <ScrollToTop />
           <Routes>
             {/* Main App Routes */}
-          <Route path="/" element={<MainLayout><LessonList /></MainLayout>} />
+          <Route path="/" element={<MainLayout hideSidebar={true}><Home /></MainLayout>} />
+          <Route path="/lessons" element={<MainLayout><LessonList /></MainLayout>} />
           <Route path="/lessons/:id" element={<MainLayout><LessonDetail /></MainLayout>} />
           <Route path="/readings" element={<MainLayout hideSidebar={true}><ReadingList /></MainLayout>} />
           <Route path="/readings/:id" element={<MainLayout hideSidebar={true}><ReadingDetail /></MainLayout>} />
+          <Route path="/vocabularies" element={<MainLayout hideSidebar={true}><VocabularyList /></MainLayout>} />
+          <Route path="/vocabularies/:id" element={<MainLayout hideSidebar={true}><VocabularyDetail /></MainLayout>} />
+          <Route path="/grammars" element={<MainLayout hideSidebar={true}><GrammarList /></MainLayout>} />
+          <Route path="/grammars/:id" element={<MainLayout hideSidebar={true}><GrammarDetail /></MainLayout>} />
           
           {/* Auth Routes */}
           <Route path="/login" element={<AuthLayout><LoginPage /></AuthLayout>} />

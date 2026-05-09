@@ -13,6 +13,9 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
 
     List<Lesson> findByCourseIdOrderByIdAsc(String courseId);
 
+    @Query("SELECT g FROM Lesson l JOIN l.grammar g WHERE l.course.id = :courseId")
+    List<String> findAllGrammarsByCourseId(@Param("courseId") String courseId);
+
     @Query("SELECT l FROM Lesson l WHERE " +
            "LOWER(l.title) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
            "LOWER(l.titleJp) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +

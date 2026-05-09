@@ -13,6 +13,9 @@ public interface VocabularyRepository extends JpaRepository<Vocabulary, Long> {
 
     List<Vocabulary> findByLessonIdOrderByIdAsc(Long lessonId);
 
+    @Query("SELECT v FROM Vocabulary v WHERE v.lesson.course.id = :courseId ORDER BY v.id ASC")
+    List<Vocabulary> findByCourseId(@Param("courseId") String courseId);
+
     @Query("SELECT v FROM Vocabulary v WHERE " +
            "LOWER(v.word) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
            "LOWER(v.reading) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +

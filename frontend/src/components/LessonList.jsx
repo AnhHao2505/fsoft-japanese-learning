@@ -64,14 +64,14 @@ const LessonList = () => {
             Bài Đọc
           </button>
           <button 
-            className={`tab ${activeTab === 'bg' ? 'active' : ''}`}
-            onClick={() => setActiveTab('bg')}
+            className="tab"
+            onClick={() => navigate('/grammars')}
           >
             Bài Giảng Ngữ Pháp
           </button>
           <button 
-            className={`tab ${activeTab === 'tu_vung' ? 'active' : ''}`}
-            onClick={() => setActiveTab('tu_vung')}
+            className="tab"
+            onClick={() => navigate('/vocabularies')}
           >
             Từ Vựng
           </button>
