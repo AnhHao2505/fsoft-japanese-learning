@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { BookOpen, HelpCircle } from 'lucide-react';
+import { BookOpen, HelpCircle, ArrowLeft } from 'lucide-react';
 import api from '../utils/api';
 import SkeletonLoader from './SkeletonLoader';
 
@@ -30,39 +30,27 @@ const ReadingList = () => {
   }
 
   return (
-    <div className="card">
-      <div className="card-header" style={{flexDirection: 'column', alignItems: 'flex-start', gap: '16px'}}>
-        <div className="tabs">
-          <button 
-            className="tab"
-            onClick={() => navigate(`/courses/${courseId}`)}
-          >
-            Tổng quan
-          </button>
-          <button 
-            className="tab active"
-          >
-            Bài Đọc
-          </button>
-          <button 
-            className="tab"
-            onClick={() => navigate(`/courses/${courseId}/grammars`)}
-          >
-            Ngữ Pháp
-          </button>
-          <button 
-            className="tab"
-            onClick={() => navigate(`/courses/${courseId}/vocabularies`)}
-          >
-            Từ Vựng
-          </button>
-          {(courseId === 'jpd326' || courseId === 'jpd316') && (
-            <button className="tab" onClick={() => navigate(`/courses/${courseId}/kanjis`)}>
-              Kanji
-            </button>
-          )}
+    <>
+      <button 
+        onClick={() => navigate('/')} 
+        style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          background: 'none', 
+          border: 'none', 
+          color: 'var(--text-muted)', 
+          cursor: 'pointer',
+          marginBottom: '20px',
+          fontSize: '1rem'
+        }}
+      >
+        <ArrowLeft size={18} style={{ marginRight: '8px' }} /> Trang chủ
+      </button>
+      <div className="card">
+        <div className="card-header" style={{ padding: '20px' }}>
+          <h2 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 'bold' }}>Danh sách Bài Đọc</h2>
         </div>
-      </div>
+
       
       <div className="card-body" style={{padding: '12px'}}>
         <div className="lesson-list">
@@ -87,6 +75,7 @@ const ReadingList = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
