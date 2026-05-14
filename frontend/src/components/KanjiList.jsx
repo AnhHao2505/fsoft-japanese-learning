@@ -100,7 +100,7 @@ const KanjiList = () => {
         ) : (
           <div className="lesson-groups">
             {Object.keys(groupedKanjis).map((groupName) => {
-              const isExpanded = expandedGroups[groupName] !== false; // Default to expanded
+              const isExpanded = expandedGroups[groupName] === true; // Default to collapsed
               
               return (
                 <div key={groupName} style={{ marginBottom: '16px', backgroundColor: 'var(--bg-lighter)', borderRadius: '12px', border: '1px solid var(--border-color)', overflow: 'hidden' }}>
