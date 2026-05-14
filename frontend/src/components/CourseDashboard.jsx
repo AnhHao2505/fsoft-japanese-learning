@@ -129,23 +129,7 @@ const CourseDashboard = () => {
           </Link>
         )}
 
-        {/* Bài Đọc Card (Only show if not JPD326) */}
-        {courseId !== 'jpd326' && (
-          <Link to={`/courses/${courseId}/readings`} className="card" style={{ textDecoration: 'none', transition: 'transform 0.2s', display: 'flex', flexDirection: 'column', height: '100%' }}>
-            <div className="card-body" style={{ flex: 1, padding: '32px' }}>
-              <div style={{ width: '64px', height: '64px', borderRadius: '16px', backgroundColor: 'rgba(245, 158, 11, 0.1)', color: '#F59E0B', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
-                <FileText size={32} />
-              </div>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white', marginBottom: '12px' }}>Bài Đọc</h2>
-              <p style={{ color: 'var(--text-muted)', marginBottom: '24px', lineHeight: '1.6' }}>
-                Luyện kỹ năng đọc hiểu qua các bài luận ngắn, tích hợp danh sách từ vựng và dịch nghĩa.
-              </p>
-              <div style={{ display: 'flex', alignItems: 'center', color: '#F59E0B', fontWeight: 'bold', marginTop: 'auto' }}>
-                Bắt đầu học <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-              </div>
-            </div>
-          </Link>
-        )}
+
 
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen, FileText } from 'lucide-react';
 import api from '../utils/api';
 import SkeletonLoader from './SkeletonLoader';
 
@@ -59,6 +59,27 @@ const Home = () => {
               </div>
             </Link>
           ))}
+
+          {/* Bài Đọc Card (Static) */}
+          <Link to={`/courses/jpd316/readings`} className="card" style={{ textDecoration: 'none', transition: 'transform 0.2s', display: 'flex', flexDirection: 'column', height: '100%' }}>
+            <div className="card-body" style={{ flex: 1, padding: '32px' }}>
+              <div style={{ width: '64px', height: '64px', borderRadius: '16px', backgroundColor: 'rgba(245, 158, 11, 0.1)', color: '#F59E0B', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px', fontSize: '2rem' }}>
+                <FileText size={32} />
+              </div>
+              <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white', marginBottom: '8px' }}>
+                Đọc Hiểu
+              </h2>
+              <h3 style={{ fontSize: '1rem', color: '#F59E0B', marginBottom: '16px' }}>
+                Trình độ N3
+              </h3>
+              <p style={{ color: 'var(--text-muted)', marginBottom: '24px', lineHeight: '1.6' }}>
+                Luyện kỹ năng đọc hiểu qua các bài luận ngắn, tích hợp danh sách từ vựng và dịch nghĩa.
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', color: '#F59E0B', fontWeight: 'bold', marginTop: 'auto' }}>
+                Bắt đầu học <ArrowRight size={18} style={{ marginLeft: '8px' }} />
+              </div>
+            </div>
+          </Link>
         </div>
       )}
     </div>
