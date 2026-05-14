@@ -11,7 +11,7 @@ const splitLines = (text) => {
 };
 
 const ReadingDetail = () => {
-  const { id } = useParams();
+  const { id, courseId } = useParams();
   const [reading, setReading] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -21,7 +21,7 @@ const ReadingDetail = () => {
     const fetchReading = async () => {
       try {
         setLoading(true);
-        const response = await api.get(`/courses/jpd316/readings/${id}`);
+        const response = await api.get(`/courses/${courseId}/readings/${id}`);
         setReading(response.data);
       } catch (err) {
         setError('Không thể tải dữ liệu bài đọc');
@@ -40,7 +40,7 @@ const ReadingDetail = () => {
   return (
     <div className="card">
       <div className="card-body">
-        <Link to="/readings" className="btn btn-ghost" style={{ padding: '0', marginBottom: '24px', display: 'inline-flex' }}>
+        <Link to={`/courses/${courseId}/readings`} className="btn btn-ghost" style={{ padding: '0', marginBottom: '24px', display: 'inline-flex' }}>
           <ArrowLeft size={18} /> <span style={{ marginLeft: '8px' }}>Quay lại danh sách bài đọc</span>
         </Link>
         

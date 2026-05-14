@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useParams } from 'react-router-dom';
 import { Layers, Search } from 'lucide-react';
 import api from '../utils/api';
 import SkeletonLoader from './SkeletonLoader';
@@ -8,12 +8,13 @@ const GrammarList = () => {
   const [lessons, setLessons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  const { courseId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchGrammars = async () => {
       try {
-        const response = await api.get('/courses/jpd316/lessons');
+        const response = await api.get(`/courses/${courseId}/lessons`);
         // Only keep grammar lessons
         const grammarLessons = response.data.filter(l => l.category === 'Ngữ pháp');
         setLessons(grammarLessons);
@@ -24,7 +25,7 @@ const GrammarList = () => {
       }
     };
     fetchGrammars();
-  }, []);
+  }, [courseId]);
 
   const filteredLessons = lessons.filter(lesson => 
     lesson.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -35,25 +36,32 @@ const GrammarList = () => {
     <div className="card">
       <div className="card-header" style={{flexDirection: 'column', alignItems: 'flex-start', gap: '16px'}}>
         <div className="tabs">
-          <button className="tab" onClick={() => navigate('/')}>
-            Tất cả
+          <button className="tab" onClick={() => navigate(`/courses/${courseId}`)}>
+            Tổng quan
           </button>
-          <button className="tab" onClick={() => navigate('/readings')}>
-            Bài Đọc
-          </button>
+          {courseId !== 'jpd326' && (
+            <button className="tab" onClick={() => navigate(`/courses/${courseId}/readings`)}>
+              Bài Đọc
+            </button>
+          )}
           <button className="tab active">
-            Bài Giảng Ngữ Pháp
+            Ngữ Pháp
           </button>
-          <button className="tab" onClick={() => navigate('/vocabularies')}>
+          <button className="tab" onClick={() => navigate(`/courses/${courseId}/vocabularies`)}>
             Từ Vựng
           </button>
+          {(courseId === 'jpd326' || courseId === 'jpd316') && (
+            <button className="tab" onClick={() => navigate(`/courses/${courseId}/kanjis`)}>
+              Kanji
+            </button>
+          )}
         </div>
       </div>
       
       <div className="card-body" style={{padding: '20px'}}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
           <h2 style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0, color: 'var(--primary)' }}>
-            <Layers size={24} /> Danh mục Ngữ Pháp (JPD316)
+            <Layers size={24} /> Danh mục Ngữ Pháp ({courseId?.toUpperCase()})
           </h2>
           
           <div className="search-box" style={{ width: '300px', backgroundColor: 'var(--bg-lighter)', border: '1px solid var(--border-color)' }}>
@@ -79,7 +87,7 @@ const GrammarList = () => {
             {filteredLessons.map((lesson, idx) => {
               return (
                 <Link 
-                  to={`/grammars/${lesson.id}`}
+                  to={`/courses/${courseId}/grammars/${lesson.id}`}
                   key={lesson.id} 
                   className="lesson-item" 
                   style={{ 

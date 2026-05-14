@@ -5,7 +5,7 @@ import api from '../utils/api';
 import SkeletonLoader from './SkeletonLoader';
 
 const GrammarDetail = () => {
-  const { id } = useParams();
+  const { id, courseId } = useParams();
   const [lesson, setLesson] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -14,7 +14,7 @@ const GrammarDetail = () => {
     const fetchLesson = async () => {
       try {
         setLoading(true);
-        const response = await api.get(`/courses/jpd316/lessons/${id}`);
+        const response = await api.get(`/courses/${courseId}/lessons/${id}`);
         setLesson(response.data);
       } catch (err) {
         console.error("Error fetching grammar detail:", err);
@@ -51,7 +51,7 @@ const GrammarDetail = () => {
   return (
     <div className="card">
       <div className="card-body">
-        <Link to="/grammars" className="btn btn-ghost" style={{ padding: '0', marginBottom: '24px', display: 'inline-flex' }}>
+        <Link to={`/courses/${courseId}/grammars`} className="btn btn-ghost" style={{ padding: '0', marginBottom: '24px', display: 'inline-flex' }}>
           <ArrowLeft size={18} /> <span style={{ marginLeft: '8px' }}>Quay lại danh mục ngữ pháp</span>
         </Link>
         

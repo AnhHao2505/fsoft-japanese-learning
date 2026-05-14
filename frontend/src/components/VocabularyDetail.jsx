@@ -5,7 +5,7 @@ import api from '../utils/api';
 import SkeletonLoader from './SkeletonLoader';
 
 const VocabularyDetail = () => {
-  const { id } = useParams();
+  const { id, courseId } = useParams();
   const [lesson, setLesson] = useState(null);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,7 +16,7 @@ const VocabularyDetail = () => {
       try {
         setLoading(true);
         // We use the lessons API since it includes vocabularies
-        const response = await api.get(`/courses/jpd316/lessons/${id}`);
+        const response = await api.get(`/courses/${courseId}/lessons/${id}`);
         setLesson(response.data);
       } catch (err) {
         console.error("Error fetching vocabulary detail:", err);
@@ -41,7 +41,7 @@ const VocabularyDetail = () => {
   return (
     <div className="card">
       <div className="card-body">
-        <Link to="/vocabularies" className="btn btn-ghost" style={{ padding: '0', marginBottom: '24px', display: 'inline-flex' }}>
+        <Link to={`/courses/${courseId}/vocabularies`} className="btn btn-ghost" style={{ padding: '0', marginBottom: '24px', display: 'inline-flex' }}>
           <ArrowLeft size={18} /> <span style={{ marginLeft: '8px' }}>Quay lại danh mục từ vựng</span>
         </Link>
         
