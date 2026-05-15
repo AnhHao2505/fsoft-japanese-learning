@@ -63,7 +63,8 @@ const GrammarDetail = () => {
         {id === '1001' ? (
           <JapaneseIntro />
         ) : (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+          <>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
           {/* Ý NGHĨA Box */}
           <div style={{ 
             border: '1px solid #34D399', 
@@ -129,6 +130,7 @@ const GrammarDetail = () => {
             })}
           </div>
         </div>
+        </>
         )}
 
       </div>

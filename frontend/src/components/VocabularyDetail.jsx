@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Search } from 'lucide-react';
+import { ArrowLeft, BookOpen, Search, Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import api from '../utils/api';
 import SkeletonLoader from './SkeletonLoader';
 
@@ -10,6 +10,25 @@ const VocabularyDetail = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState('');
+  
+  const [isFlashcardMode, setIsFlashcardMode] = useState(false);
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleNextCard = () => {
+    setIsFlipped(false);
+    setTimeout(() => {
+      setCurrentCardIndex((prev) => (prev + 1) % filteredVocabularies.length);
+    }, 150);
+  };
+
+  const handlePrevCard = () => {
+    setIsFlipped(false);
+    setTimeout(() => {
+      setCurrentCardIndex((prev) => (prev === 0 ? filteredVocabularies.length - 1 : prev - 1));
+    }, 150);
+  };
+
 
   useEffect(() => {
     const fetchLesson = async () => {
@@ -62,19 +81,77 @@ const VocabularyDetail = () => {
               <BookOpen size={20} className="text-primary" /> Tổng số: {lesson.vocabulary?.length || 0} từ
             </h3>
             
-            <div className="search-box" style={{ width: '250px', backgroundColor: 'var(--bg-lighter)', border: '1px solid var(--border-color)' }}>
-              <Search size={16} className="search-icon" />
-              <input
-                type="text"
-                className="search-input"
-                placeholder="Tìm từ vựng trong bài..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+                        <div style={{ display: 'flex', gap: '12px' }}>
+              <button 
+                onClick={() => {
+                  setIsFlashcardMode(true);
+                  setCurrentCardIndex(0);
+                  setIsFlipped(false);
+                }} 
+                className="btn btn-primary"
+                disabled={filteredVocabularies.length === 0}
+              >
+                <Maximize2 size={18} /> Học bằng Flashcard
+              </button>
+              <div className="search-box" style={{ width: '250px', backgroundColor: 'var(--bg-lighter)', border: '1px solid var(--border-color)' }}>
+                <Search size={16} className="search-icon" />
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="Tìm từ vựng trong bài..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
             </div>
           </div>
 
-          {filteredVocabularies.length === 0 ? (
+                    {isFlashcardMode && filteredVocabularies.length > 0 ? (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '32px' }}>
+              <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
+                <button onClick={() => setIsFlashcardMode(false)} className="btn btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <X size={18} /> Thoát Flashcard
+                </button>
+              </div>
+
+              <div style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '16px', fontWeight: 'bold' }}>
+                {currentCardIndex + 1} / {filteredVocabularies.length}
+              </div>
+
+              <div 
+                className={`flashcard-container ${isFlipped ? 'flipped' : ''}`} 
+                onClick={() => setIsFlipped(!isFlipped)}
+              >
+                <div className="flashcard-inner">
+                  <div className="flashcard-front">
+                    <div className="jp-text text-primary" style={{ fontSize: '6rem', fontWeight: 'bold', lineHeight: 1 }}>
+                      {filteredVocabularies[currentCardIndex].word}
+                    </div>
+                    <div style={{ marginTop: '24px', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                      Nhấn để lật thẻ
+                    </div>
+                  </div>
+                  <div className="flashcard-back">
+                    <div className="reading-text" style={{ fontSize: '2.5rem', color: 'white', marginBottom: '16px', fontWeight: 'bold' }}>
+                      {filteredVocabularies[currentCardIndex].reading}
+                    </div>
+                    <div style={{ fontSize: '1.2rem', color: 'var(--text-main)', textAlign: 'center' }}>
+                      {filteredVocabularies[currentCardIndex].meaning}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '24px', marginTop: '32px' }}>
+                <button onClick={handlePrevCard} className="btn btn-outline" style={{ padding: '12px 24px', borderRadius: '50px' }}>
+                  <ChevronLeft size={24} /> Trước
+                </button>
+                <button onClick={handleNextCard} className="btn btn-primary" style={{ padding: '12px 24px', borderRadius: '50px' }}>
+                  Sau <ChevronRight size={24} />
+                </button>
+              </div>
+            </div>
+          ) : filteredVocabularies.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>
               Không tìm thấy từ vựng nào khớp.
             </div>
