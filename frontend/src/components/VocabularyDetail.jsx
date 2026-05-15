@@ -11,9 +11,21 @@ const VocabularyDetail = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState('');
   
-  const [isFlashcardMode, setIsFlashcardMode] = useState(false);
-  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [isFlashcardMode, setIsFlashcardMode] = useState(() => {
+    return sessionStorage.getItem(`flashcardMode_${id}`) === 'true';
+  });
+  const [currentCardIndex, setCurrentCardIndex] = useState(() => {
+    return parseInt(sessionStorage.getItem(`flashcardIndex_${id}`) || '0', 10);
+  });
   const [isFlipped, setIsFlipped] = useState(false);
+
+  useEffect(() => {
+    sessionStorage.setItem(`flashcardMode_${id}`, isFlashcardMode);
+  }, [isFlashcardMode, id]);
+
+  useEffect(() => {
+    sessionStorage.setItem(`flashcardIndex_${id}`, currentCardIndex);
+  }, [currentCardIndex, id]);
 
   const handleNextCard = () => {
     setIsFlipped(false);
