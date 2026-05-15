@@ -54,7 +54,7 @@ const ReadingList = () => {
       
       <div className="card-body" style={{padding: '12px'}}>
         <div className="lesson-list">
-          {readings.map((reading, idx) => (
+          {[...readings].sort((a, b) => a.title.localeCompare(b.title, undefined, { numeric: true, sensitivity: 'base' })).map((reading, idx) => (
             <Link to={`/courses/${courseId}/readings/${reading.id}`} className="lesson-item fade-in-up" style={{ animationDelay: `${idx * 0.05}s` }} key={reading.id}>
               <div className="lesson-meta">
                 <span className="lesson-category">ĐỌC</span>

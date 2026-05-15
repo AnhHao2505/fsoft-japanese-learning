@@ -99,7 +99,9 @@ const KanjiList = () => {
           </div>
         ) : (
           <div className="lesson-groups">
-            {Object.keys(groupedKanjis).map((groupName) => {
+            {Object.keys(groupedKanjis)
+              .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
+              .map((groupName) => {
               const isExpanded = expandedGroups[groupName] === true; // Default to collapsed
               
               return (

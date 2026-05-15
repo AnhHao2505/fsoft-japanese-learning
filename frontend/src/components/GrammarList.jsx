@@ -84,7 +84,9 @@ const GrammarList = () => {
           </div>
         ) : (
           <div className="lesson-list">
-            {filteredLessons.map((lesson, idx) => {
+            {filteredLessons
+              .sort((a, b) => a.title.localeCompare(b.title, undefined, { numeric: true, sensitivity: 'base' }))
+              .map((lesson, idx) => {
               return (
                 <Link 
                   to={`/courses/${courseId}/grammars/${lesson.id}`}

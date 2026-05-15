@@ -85,7 +85,9 @@ const VocabularyList = () => {
           </div>
         ) : (
           <div className="lesson-list">
-            {filteredLessons.map((lesson, idx) => (
+            {filteredLessons
+              .sort((a, b) => a.title.localeCompare(b.title, undefined, { numeric: true, sensitivity: 'base' }))
+              .map((lesson, idx) => (
               <Link to={`/courses/${courseId}/vocabularies/${lesson.id}`} className="lesson-item" style={{ animationDelay: `${idx * 0.05}s`, animationFillMode: 'both', animationName: 'fadeInUp', animationDuration: '0.5s' }} key={lesson.id}>
                 <div className="lesson-meta">
                   <span className="lesson-category">TV</span>
