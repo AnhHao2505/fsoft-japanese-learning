@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Search, Info, AlertTriangle } from 'lucide-react';
 import api from '../utils/api';
 import SkeletonLoader from './SkeletonLoader';
+import JapaneseIntro from './JapaneseIntro';
 
 const GrammarDetail = () => {
   const { id, courseId } = useParams();
@@ -59,7 +60,10 @@ const GrammarDetail = () => {
           {grammarPoint}
         </h1>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+        {id === '1001' ? (
+          <JapaneseIntro />
+        ) : (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
           {/* Ý NGHĨA Box */}
           <div style={{ 
             border: '1px solid #34D399', 
@@ -125,6 +129,7 @@ const GrammarDetail = () => {
             })}
           </div>
         </div>
+        )}
 
       </div>
     </div>

@@ -5,7 +5,7 @@ import api from '../utils/api';
 import SkeletonLoader from './SkeletonLoader';
 
 const LessonDetail = () => {
-  const { id } = useParams();
+  const { courseId, id } = useParams();
   const [lesson, setLesson] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -14,8 +14,7 @@ const LessonDetail = () => {
     const fetchLesson = async () => {
       try {
         setLoading(true);
-        // Hardcode jpd316 as courseId
-        const response = await api.get(`/courses/jpd316/lessons/${id}`);
+        const response = await api.get(`/courses/${courseId}/lessons/${id}`);
         setLesson(response.data);
       } catch (err) {
         setError('Không thể tải dữ liệu bài học');
@@ -25,7 +24,7 @@ const LessonDetail = () => {
       }
     };
     fetchLesson();
-  }, [id]);
+  }, [courseId, id]);
 
   if (loading) return <SkeletonLoader type="detail" />;
   if (error) return <div className="error-box">{error}</div>;
@@ -34,7 +33,7 @@ const LessonDetail = () => {
   return (
     <div className="card">
       <div className="card-body">
-        <Link to="/" className="btn btn-ghost" style={{ padding: '0', marginBottom: '24px', display: 'inline-flex' }}>
+        <Link to={`/courses/${courseId}/lessons`} className="btn btn-ghost" style={{ padding: '0', marginBottom: '24px', display: 'inline-flex' }}>
           <ArrowLeft size={18} /> <span style={{ marginLeft: '8px' }}>Quay lại danh sách</span>
         </Link>
         

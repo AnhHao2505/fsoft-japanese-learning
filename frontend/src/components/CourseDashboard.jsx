@@ -85,9 +85,13 @@ const CourseDashboard = () => {
             <div style={{ width: '64px', height: '64px', borderRadius: '16px', backgroundColor: 'rgba(59, 130, 246, 0.1)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
               <BookOpen size={32} />
             </div>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white', marginBottom: '12px' }}>Từ Vựng</h2>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white', marginBottom: '12px' }}>
+              {courseId === 'n5_beginner' ? 'Bảng Chữ Cái' : 'Từ Vựng'}
+            </h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '24px', lineHeight: '1.6' }}>
-              Hệ thống từ vựng phân chia theo chuyên đề giúp bạn dễ dàng theo dõi và ghi nhớ.
+              {courseId === 'n5_beginner' 
+                ? 'Học bảng chữ cái Hiragana và Katakana cơ bản kèm phiên âm.' 
+                : 'Hệ thống từ vựng phân chia theo chuyên đề giúp bạn dễ dàng theo dõi và ghi nhớ.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', color: 'var(--primary)', fontWeight: 'bold', marginTop: 'auto' }}>
               Bắt đầu học <ArrowRight size={18} style={{ marginLeft: '8px' }} />
@@ -101,9 +105,13 @@ const CourseDashboard = () => {
             <div style={{ width: '64px', height: '64px', borderRadius: '16px', backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#10B981', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
               <Layers size={32} />
             </div>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white', marginBottom: '12px' }}>Ngữ Pháp</h2>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white', marginBottom: '12px' }}>
+              {courseId === 'n5_beginner' ? 'Nhập Môn' : 'Ngữ Pháp'}
+            </h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '24px', lineHeight: '1.6' }}>
-              Các điểm ngữ pháp quan trọng kèm theo ví dụ song ngữ Nhật - Việt giải thích chi tiết.
+              {courseId === 'n5_beginner'
+                ? 'Giới thiệu tổng quan về tiếng Nhật và cách học hiệu quả cho người mới.'
+                : 'Các điểm ngữ pháp quan trọng kèm theo ví dụ song ngữ Nhật - Việt giải thích chi tiết.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', color: '#10B981', fontWeight: 'bold', marginTop: 'auto' }}>
               Bắt đầu học <ArrowRight size={18} style={{ marginLeft: '8px' }} />

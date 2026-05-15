@@ -78,6 +78,16 @@ const VocabularyDetail = () => {
             <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>
               Không tìm thấy từ vựng nào khớp.
             </div>
+          ) : courseId === 'n5_beginner' ? (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: '16px', marginBottom: '32px' }}>
+              {filteredVocabularies.map((vocab, vIdx) => (
+                <div key={vocab.id || vIdx} style={{ backgroundColor: 'var(--bg-lighter)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '24px 16px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <div className="jp-text text-primary" style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '8px', lineHeight: 1 }}>{vocab.word}</div>
+                  <div className="reading-text" style={{ fontSize: '1.2rem', color: 'var(--text)', marginBottom: '8px', fontWeight: 'bold' }}>{vocab.reading}</div>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>{vocab.meaning}</div>
+                </div>
+              ))}
+            </div>
           ) : (
             <div style={{ overflowX: 'auto', marginBottom: '32px' }}>
               <table className="data-table">
