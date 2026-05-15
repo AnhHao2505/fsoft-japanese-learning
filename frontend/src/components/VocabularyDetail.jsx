@@ -136,7 +136,7 @@ const VocabularyDetail = () => {
               >
                 <div className="flashcard-inner">
                   <div className="flashcard-front">
-                    <div className="jp-text text-primary" style={{ fontSize: '6rem', fontWeight: 'bold', lineHeight: 1 }}>
+                    <div className="jp-text text-primary" style={{ fontSize: filteredVocabularies[currentCardIndex].word.length > 10 ? '2.5rem' : filteredVocabularies[currentCardIndex].word.length > 5 ? '3.5rem' : '6rem', fontWeight: 'bold', lineHeight: 1 }}>
                       {filteredVocabularies[currentCardIndex].word}
                     </div>
                     <div style={{ marginTop: '24px', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
@@ -166,6 +166,20 @@ const VocabularyDetail = () => {
           ) : filteredVocabularies.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>
               Không tìm thấy từ vựng nào khớp.
+            </div>
+          ) : id === '1004' ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+              {filteredVocabularies.map((vocab, vIdx) => (
+                <div key={vocab.id || vIdx} style={{ backgroundColor: 'var(--bg-lighter)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '24px', display: 'flex', alignItems: 'center' }}>
+                  <div style={{ flex: '1' }}>
+                    <div className="jp-text text-primary" style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '8px' }}>{vocab.word}</div>
+                    <div className="reading-text" style={{ fontSize: '1.1rem', color: 'var(--text)', marginBottom: '4px', fontWeight: 'bold' }}>{vocab.reading}</div>
+                  </div>
+                  <div style={{ flex: '1', fontSize: '1.1rem', color: 'var(--text-main)', textAlign: 'right', fontStyle: 'italic' }}>
+                    {vocab.meaning}
+                  </div>
+                </div>
+              ))}
             </div>
           ) : courseId === 'n5_beginner' ? (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: '16px', marginBottom: '32px' }}>
