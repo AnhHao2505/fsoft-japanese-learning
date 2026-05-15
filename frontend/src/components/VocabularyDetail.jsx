@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Search, Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, BookOpen, Search, Maximize2, X, ChevronLeft, ChevronRight, Volume2 } from 'lucide-react';
 import api from '../utils/api';
 import SkeletonLoader from './SkeletonLoader';
 
@@ -18,6 +18,21 @@ const VocabularyDetail = () => {
     return parseInt(sessionStorage.getItem(`flashcardIndex_${id}`) || '0', 10);
   });
   const [isFlipped, setIsFlipped] = useState(false);
+
+  const playAudio = (text, e) => {
+    if (e) {
+      e.stopPropagation();
+    }
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'ja-JP';
+      utterance.rate = 0.9;
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utterance);
+    } else {
+      console.warn('Trình duyệt không hỗ trợ Web Speech API');
+    }
+  };
 
   useEffect(() => {
     sessionStorage.setItem(`flashcardMode_${id}`, isFlashcardMode);
@@ -136,6 +151,11 @@ const VocabularyDetail = () => {
               >
                 <div className="flashcard-inner">
                   <div className="flashcard-front">
+                    <div style={{ position: 'absolute', top: '16px', right: '16px' }}>
+                      <button onClick={(e) => playAudio(filteredVocabularies[currentCardIndex].word, e)} className="btn btn-ghost" style={{ padding: '8px', color: 'var(--primary)', backgroundColor: 'rgba(59, 130, 246, 0.1)', borderRadius: '50%' }}>
+                        <Volume2 size={24} />
+                      </button>
+                    </div>
                     <div className="jp-text text-primary" style={{ fontSize: filteredVocabularies[currentCardIndex].word.length > 10 ? '2.5rem' : filteredVocabularies[currentCardIndex].word.length > 5 ? '3.5rem' : '6rem', fontWeight: 'bold', lineHeight: 1 }}>
                       {filteredVocabularies[currentCardIndex].word}
                     </div>
@@ -171,9 +191,14 @@ const VocabularyDetail = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
               {filteredVocabularies.map((vocab, vIdx) => (
                 <div key={vocab.id || vIdx} style={{ backgroundColor: 'var(--bg-lighter)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '24px', display: 'flex', alignItems: 'center' }}>
-                  <div style={{ flex: '1' }}>
-                    <div className="jp-text text-primary" style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '8px' }}>{vocab.word}</div>
-                    <div className="reading-text" style={{ fontSize: '1.1rem', color: 'var(--text)', marginBottom: '4px', fontWeight: 'bold' }}>{vocab.reading}</div>
+                  <div style={{ flex: '1', display: 'flex', alignItems: 'center', gap: '16px' }}>
+                    <button onClick={(e) => playAudio(vocab.word, e)} className="btn btn-ghost" style={{ padding: '10px', color: 'var(--primary)', backgroundColor: 'rgba(59, 130, 246, 0.1)', borderRadius: '50%', flexShrink: 0 }}>
+                      <Volume2 size={20} />
+                    </button>
+                    <div>
+                      <div className="jp-text text-primary" style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '8px' }}>{vocab.word}</div>
+                      <div className="reading-text" style={{ fontSize: '1.1rem', color: 'var(--text)', marginBottom: '4px', fontWeight: 'bold' }}>{vocab.reading}</div>
+                    </div>
                   </div>
                   <div style={{ flex: '1', fontSize: '1.1rem', color: 'var(--text-main)', textAlign: 'right', fontStyle: 'italic' }}>
                     {vocab.meaning}
@@ -184,7 +209,10 @@ const VocabularyDetail = () => {
           ) : courseId === 'n5_beginner' ? (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: '16px', marginBottom: '32px' }}>
               {filteredVocabularies.map((vocab, vIdx) => (
-                <div key={vocab.id || vIdx} style={{ backgroundColor: 'var(--bg-lighter)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '24px 16px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div key={vocab.id || vIdx} style={{ position: 'relative', backgroundColor: 'var(--bg-lighter)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '24px 16px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <button onClick={(e) => playAudio(vocab.word, e)} className="btn btn-ghost" style={{ position: 'absolute', top: '8px', right: '8px', padding: '6px', color: 'var(--primary)', borderRadius: '50%', opacity: 0.7 }}>
+                    <Volume2 size={16} />
+                  </button>
                   <div className="jp-text text-primary" style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '8px', lineHeight: 1 }}>{vocab.word}</div>
                   <div className="reading-text" style={{ fontSize: '1.2rem', color: 'var(--text)', marginBottom: '8px', fontWeight: 'bold' }}>{vocab.reading}</div>
                   <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>{vocab.meaning}</div>
