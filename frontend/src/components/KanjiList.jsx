@@ -33,6 +33,22 @@ const KanjiList = () => {
     fetchKanjis();
   }, [courseId]);
 
+  const parseExample = (exampleStr) => {
+    if (!exampleStr) return { word: '', reading: '', meaning: '' };
+    const dashSplit = exampleStr.split(' - ');
+    const jpPart = dashSplit[0] ? dashSplit[0].trim() : exampleStr;
+    const meaning = dashSplit[1] ? dashSplit[1].trim() : '';
+    
+    let word = jpPart;
+    let reading = '';
+    const parenMatch = jpPart.match(/(.*?)\s*\((.*?)\)/);
+    if (parenMatch) {
+      word = parenMatch[1].trim();
+      reading = parenMatch[2].trim();
+    }
+    return { word, reading, meaning };
+  };
+
   const filteredKanjis = kanjis.filter(kanji => 
     kanji.character.includes(searchTerm) || 
     (kanji.meaning && kanji.meaning.toLowerCase().includes(searchTerm.toLowerCase())) ||
@@ -51,6 +67,176 @@ const KanjiList = () => {
 
   return (
     <div className="card">
+      <style>{`
+        .kanji-detail-card {
+          background-color: var(--bg-card, var(--bg-surface));
+          border: 1px solid var(--border-color);
+          border-radius: 16px;
+          margin-bottom: 24px;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+        .kanji-detail-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px 20px;
+          border-bottom: 1px solid var(--border-color);
+          background-color: rgba(255, 255, 255, 0.02);
+        }
+        .kanji-detail-body {
+          display: flex;
+          flex-direction: column;
+        }
+        @media (min-width: 768px) {
+          .kanji-detail-body {
+            flex-direction: row;
+          }
+        }
+        .chugoc-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 24px;
+          width: 100%;
+          border-bottom: 1px solid var(--border-color);
+          background-color: rgba(255, 255, 255, 0.01);
+        }
+        @media (min-width: 768px) {
+          .chugoc-section {
+            width: 240px;
+            border-bottom: none;
+            border-right: 1px solid var(--border-color);
+            flex-shrink: 0;
+          }
+        }
+        .kanji-main-char {
+          font-size: 5rem;
+          line-height: 1;
+          color: var(--primary);
+          font-weight: bold;
+          margin-bottom: 8px;
+          transition: transform 0.2s;
+        }
+        .kanji-main-char:hover {
+          transform: scale(1.08);
+        }
+        .kanji-sino-viet {
+          font-size: 1.25rem;
+          font-weight: 800;
+          color: var(--han-viet-color, #dc2626);
+          text-transform: uppercase;
+          margin-bottom: 16px;
+          letter-spacing: 0.1em;
+        }
+        .kanji-readings-row {
+          display: flex;
+          gap: 12px;
+          width: 100%;
+        }
+        .reading-pill-box {
+          flex: 1;
+          background-color: var(--bg-lighter);
+          border: 1px solid var(--border-color);
+          border-radius: 8px;
+          padding: 6px;
+          text-align: center;
+        }
+        .reading-pill-label {
+          font-size: 0.7rem;
+          font-weight: 700;
+          color: var(--text-muted);
+          margin-bottom: 4px;
+        }
+        .reading-pill-val {
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: var(--text-main, white);
+        }
+        .vidu-section {
+          flex: 1;
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+        }
+        .vidu-label {
+          font-size: 0.8rem;
+          font-weight: bold;
+          color: var(--text-muted);
+          letter-spacing: 0.05em;
+          margin-bottom: 16px;
+        }
+        .vidu-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        @media (min-width: 640px) {
+          .vidu-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (min-width: 1024px) {
+          .vidu-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        .vidu-card {
+          background-color: var(--bg-lighter);
+          border: 1px solid var(--border-color);
+          border-radius: 12px;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .vidu-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .vidu-jp-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 8px;
+        }
+        .vidu-word {
+          font-size: 1.35rem;
+          font-weight: bold;
+          color: var(--example-word-color, #991b1b);
+        }
+        .vidu-reading-badge {
+          background-color: rgba(59, 130, 246, 0.08);
+          color: var(--primary);
+          border: 1px solid rgba(59, 130, 246, 0.15);
+          border-radius: 6px;
+          padding: 2px 8px;
+          font-size: 0.75rem;
+          font-weight: 500;
+        }
+        .vidu-meaning {
+          font-size: 0.9rem;
+          color: var(--text-muted);
+          line-height: 1.4;
+        }
+        :root {
+          --example-word-color: #991b1b;
+          --han-viet-color: #b91c1c;
+        }
+        [data-theme='dark'] {
+          --example-word-color: #f87171;
+          --han-viet-color: #f87171;
+        }
+        .dark {
+          --example-word-color: #f87171;
+          --han-viet-color: #f87171;
+        }
+      `}</style>
       <div className="card-header" style={{flexDirection: 'column', alignItems: 'flex-start', gap: '16px'}}>
         <div className="tabs">
           <button className="tab" onClick={() => navigate(`/courses/${courseId}`)}>
@@ -142,32 +328,91 @@ const KanjiList = () => {
                   </div>
                   
                   {isExpanded && (
-                    <div className="lesson-list" style={{ padding: '20px', margin: 0 }}>
+                    <div className="lesson-list" style={{ padding: '20px 20px 8px 20px', margin: 0 }}>
                       {groupedKanjis[groupName].map((kanji, idx) => (
-                        <Link 
-                          to={`/courses/${courseId}/kanjis/${kanji.id}`} 
-                          className="lesson-item fade-in-up" 
-                          style={{ animationDelay: `${idx * 0.05}s`, display: 'flex', alignItems: 'center', marginBottom: idx === groupedKanjis[groupName].length - 1 ? 0 : '12px' }} 
+                        <div 
+                          className="kanji-detail-card fade-in-up" 
+                          style={{ animationDelay: `${idx * 0.05}s` }} 
                           key={kanji.id}
                         >
-                          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '60px', height: '60px', backgroundColor: 'var(--bg-card)', borderRadius: '12px', marginRight: '20px', border: '1px solid var(--border-color)' }}>
-                            <span className="jp-text" style={{ fontSize: '2rem', color: 'var(--primary)', fontWeight: 'bold' }}>{kanji.character}</span>
-                          </div>
-                          
-                          <div className="lesson-content" style={{ flex: 1 }}>
-                            <div className="lesson-title" style={{ fontSize: '1.2rem', marginBottom: '4px' }}>{kanji.meaning}</div>
-                            <div className="lesson-desc jp-text" style={{ fontSize: '0.9rem' }}>
-                              <span style={{ color: '#F59E0B', marginRight: '10px' }}>On: {kanji.onyomi || '-'}</span> 
-                              <span style={{ color: '#10B981' }}>Kun: {kanji.kunyomi || '-'}</span>
-                            </div>
-                          </div>
-                          
-                          <div className="lesson-stats">
-                            <span className="stat-badge" style={{ backgroundColor: 'rgba(236, 72, 153, 0.1)', color: '#EC4899', border: '1px solid rgba(236, 72, 153, 0.2)' }}>
-                              {kanji.strokeCount} nét
+                          <div className="kanji-detail-header">
+                            <span style={{ fontSize: '0.8rem', fontWeight: 'bold', color: 'var(--text-muted)', letterSpacing: '0.05em' }}>
+                              CHỮ GỐC
+                            </span>
+                            <span style={{ 
+                              fontSize: '0.8rem', 
+                              fontWeight: '600', 
+                              backgroundColor: 'rgba(59, 130, 246, 0.1)', 
+                              color: 'var(--primary)', 
+                              padding: '4px 10px', 
+                              borderRadius: '20px', 
+                              border: '1px solid rgba(59, 130, 246, 0.2)' 
+                            }}>
+                              {kanji.examples?.length || 0} ví dụ
                             </span>
                           </div>
-                        </Link>
+
+                          <div className="kanji-detail-body">
+                            {/* Left Section: Chữ gốc */}
+                            <div className="chugoc-section">
+                              <Link 
+                                to={`/courses/${courseId}/kanjis/${kanji.id}`} 
+                                className="kanji-main-char jp-text"
+                                style={{ textDecoration: 'none' }}
+                              >
+                                {kanji.character}
+                              </Link>
+                              
+                              <div className="kanji-sino-viet">
+                                {kanji.meaning}
+                              </div>
+
+                              <div className="kanji-readings-row">
+                                <div className="reading-pill-box">
+                                  <div className="reading-pill-label">ON</div>
+                                  <div className="reading-pill-val jp-text">{kanji.onyomi || 'ー'}</div>
+                                </div>
+                                <div className="reading-pill-box">
+                                  <div className="reading-pill-label">KUN</div>
+                                  <div className="reading-pill-val jp-text">{kanji.kunyomi || 'ー'}</div>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Right Section: Ví dụ ứng dụng */}
+                            <div className="vidu-section">
+                              <div className="vidu-label">VÍ DỤ ỨNG DỤNG</div>
+                              {kanji.examples && kanji.examples.length > 0 ? (
+                                <div className="vidu-grid">
+                                  {kanji.examples.map((exampleStr, exIdx) => {
+                                    const parsed = parseExample(exampleStr);
+                                    return (
+                                      <div key={exIdx} className="vidu-card">
+                                        <div className="vidu-jp-row">
+                                          <span className="vidu-word jp-text">{parsed.word}</span>
+                                          {parsed.reading && (
+                                            <span className="vidu-reading-badge jp-text">
+                                              {parsed.reading}
+                                            </span>
+                                          )}
+                                        </div>
+                                        {parsed.meaning && (
+                                          <div className="vidu-meaning">
+                                            {parsed.meaning}
+                                          </div>
+                                        )}
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              ) : (
+                                <div style={{ color: 'var(--text-muted)', fontStyle: 'italic', fontSize: '0.9rem' }}>
+                                  Không có ví dụ nào.
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
                       ))}
                     </div>
                   )}
