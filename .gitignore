@@ -1,5 +1,6 @@
 # Node
 node_modules/
+node_modules*/
 dist/
 .env
 .env.local
@@ -19,3 +20,6 @@ target/
 *.swp
 *.swo
 .DS_Store
+
+# Data files
+file_data/*.docx
