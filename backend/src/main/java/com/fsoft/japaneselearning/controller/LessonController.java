@@ -32,7 +32,10 @@ public class LessonController {
     @GetMapping("/courses/{courseId}")
     public ResponseEntity<Course> getCourseById(@PathVariable String courseId) {
         return courseService.getCourseById(courseId)
-                .map(ResponseEntity::ok)
+                .map(course -> {
+                    course.setLessons(null);
+                    return ResponseEntity.ok(course);
+                })
                 .orElse(ResponseEntity.notFound().build());
     }
 
@@ -41,6 +44,11 @@ public class LessonController {
     @GetMapping("/courses/{courseId}/lessons")
     public ResponseEntity<List<Lesson>> getLessonsByCourse(@PathVariable String courseId) {
         List<Lesson> lessons = courseService.getLessonsByCourse(courseId);
+        lessons.forEach(l -> {
+            l.setVocabulary(null);
+            l.setGrammar(null);
+            l.setExamples(null);
+        });
         return ResponseEntity.ok(lessons);
     }
 
@@ -60,6 +68,11 @@ public class LessonController {
             return ResponseEntity.ok(List.of());
         }
         List<Lesson> results = courseService.searchLessons(q.trim());
+        results.forEach(l -> {
+            l.setVocabulary(null);
+            l.setGrammar(null);
+            l.setExamples(null);
+        });
         return ResponseEntity.ok(results);
     }
 }

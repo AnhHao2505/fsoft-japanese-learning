@@ -23,6 +23,10 @@ public class ReadingService {
     }
 
     public Optional<Reading> getReadingById(Long id) {
-        return readingRepository.findById(id);
+        return readingRepository.findById(id).map(reading -> {
+            reading.getVocabularies().size();
+            reading.getGrammars().size();
+            return reading;
+        });
     }
 }

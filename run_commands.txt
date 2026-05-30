@@ -1,0 +1,10 @@
+To run the FPT Software - Japanese Learning Web App, you need to open two terminal windows and execute the following commands:
+
+1. Run Backend (Spring Boot):
+cd /Users/anhhao/Documents/Japanese_study/fsoft-japanese-learning/backend
+./mvnw spring-boot:run
+
+2. Run Frontend (React + Vite):
+cd /Users/anhhao/Documents/Japanese_study/fsoft-japanese-learning/frontend
+npm install
+npm run dev

@@ -54,11 +54,9 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="aurora-wrapper" style={{ width: '100vw', margin: '-24px -20px' }}>
-      <div className="aurora-bg"></div>
-      <div className="auth-container" style={{ position: 'relative', zIndex: 1 }}>
-        <div className="card auth-form-card">
-          <div className="card-body" style={{ padding: '40px' }}>
+    <div className="auth-container" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="card auth-form-card">
+        <div className="card-body" style={{ padding: '40px' }}>
           <div className="auth-header">
             <h1>Tạo tài khoản mới</h1>
             <p>Tham gia FPT Japanese Learning</p>
@@ -147,7 +145,6 @@ const RegisterPage = () => {
             Đã có tài khoản? <Link to="/login" style={{ fontWeight: '500' }}>Đăng nhập</Link>
           </div>
         </div>
-    </div>
       </div>
     </div>
   );

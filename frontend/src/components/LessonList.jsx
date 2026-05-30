@@ -110,15 +110,9 @@ const LessonList = () => {
                     </div>
                     
                     <div className="lesson-stats">
-                      {lesson.category === 'Từ vựng' ? (
-                        <span className="stat-badge">
-                          <BookOpen size={14} /> {lesson.vocabulary?.length || 0} Từ
-                        </span>
-                      ) : (
-                        <span className="stat-badge">
-                          <HelpCircle size={14} /> {lesson.grammar?.length || 0} Mẫu
-                        </span>
-                      )}
+                      <span className="stat-badge" style={{ backgroundColor: 'rgba(59, 130, 246, 0.1)', color: 'var(--primary)' }}>
+                        <BookOpen size={14} /> Xem chi tiết
+                      </span>
                     </div>
                   </Link>
                 ))}

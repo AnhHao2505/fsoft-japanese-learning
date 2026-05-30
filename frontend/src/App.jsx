@@ -21,10 +21,10 @@ import KanjiDetail from './components/KanjiDetail';
 import Home from './components/Home';
 import CourseDashboard from './components/CourseDashboard';
 
-// Layout wrapper for authenticated/standard pages
 const MainLayout = ({ children, hideSidebar }) => {
   return (
     <div className="app-container">
+      <div className="aurora-bg"></div>
       <Navbar />
       <div className="main-layout">
         <main className="content-area">
@@ -40,6 +40,7 @@ const MainLayout = ({ children, hideSidebar }) => {
 const AuthLayout = ({ children }) => {
   return (
     <div className="app-container">
+      <div className="aurora-bg"></div>
       <Navbar />
       <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
         {children}

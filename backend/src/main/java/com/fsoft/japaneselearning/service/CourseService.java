@@ -40,7 +40,12 @@ public class CourseService {
     }
 
     public Optional<Lesson> getLessonById(Long id) {
-        return lessonRepository.findById(id);
+        return lessonRepository.findById(id).map(lesson -> {
+            lesson.getVocabulary().size();
+            lesson.getGrammar().size();
+            lesson.getExamples().size();
+            return lesson;
+        });
     }
 
     public List<Lesson> searchLessons(String keyword) {

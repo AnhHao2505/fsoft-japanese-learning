@@ -34,11 +34,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="aurora-wrapper" style={{ width: '100vw', margin: '-24px -20px' }}>
-      <div className="aurora-bg"></div>
-      <div className="auth-container" style={{ position: 'relative', zIndex: 1 }}>
-        <div className="card auth-form-card">
-          <div className="card-body" style={{ padding: '40px' }}>
+    <div className="auth-container" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="card auth-form-card">
+        <div className="card-body" style={{ padding: '40px' }}>
           <div className="auth-header">
             <h1>Chào mừng trở lại</h1>
             <p>Đăng nhập để vào FPT Japanese Learning</p>
@@ -85,7 +83,6 @@ const LoginPage = () => {
             Chưa có tài khoản? <Link to="/register" style={{ fontWeight: '500' }}>Đăng ký ngay</Link>
           </div>
         </div>
-    </div>
       </div>
     </div>
   );

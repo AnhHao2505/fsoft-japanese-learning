@@ -19,10 +19,22 @@ public class KanjiService {
     }
 
     public List<Kanji> getKanjisByCourse(String courseId) {
-        return kanjiRepository.findByCourseIdOrderBySortOrderAsc(courseId);
+        List<Kanji> kanjis = kanjiRepository.findByCourseIdOrderBySortOrderAsc(courseId);
+        kanjis.forEach(kanji -> {
+            if (kanji.getExamples() != null) {
+                kanji.getExamples().removeIf(java.util.Objects::isNull);
+            }
+        });
+        return kanjis;
     }
 
+    @Transactional(readOnly = true)
     public Optional<Kanji> getKanjiById(Long id) {
-        return kanjiRepository.findById(id);
+        return kanjiRepository.findById(id).map(kanji -> {
+            if (kanji.getExamples() != null) {
+                kanji.getExamples().removeIf(java.util.Objects::isNull);
+            }
+            return kanji;
+        });
     }
 }

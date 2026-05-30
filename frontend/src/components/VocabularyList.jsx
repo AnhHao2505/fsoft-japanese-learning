@@ -15,8 +15,8 @@ const VocabularyList = () => {
     const fetchVocabularies = async () => {
       try {
         const response = await api.get(`/courses/${courseId}/lessons`);
-        // Only keep vocabulary lessons that have vocabularies
-        const vocabLessons = response.data.filter(l => l.category === 'Từ vựng' && l.vocabulary && l.vocabulary.length > 0);
+        // Only keep vocabulary lessons
+        const vocabLessons = response.data.filter(l => l.category === 'Từ vựng');
         setLessons(vocabLessons);
       } catch (error) {
         console.error("Error fetching vocab lessons:", error);
@@ -100,8 +100,8 @@ const VocabularyList = () => {
                 </div>
                 
                 <div className="lesson-stats">
-                  <span className="stat-badge">
-                    <BookOpen size={14} /> {lesson.vocabulary?.length || 0} Từ
+                  <span className="stat-badge" style={{ backgroundColor: 'rgba(59, 130, 246, 0.1)', color: 'var(--primary)' }}>
+                    <BookOpen size={14} /> Xem chi tiết
                   </span>
                 </div>
               </Link>

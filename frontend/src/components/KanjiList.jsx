@@ -69,21 +69,28 @@ const KanjiList = () => {
     <div className="card">
       <style>{`
         .kanji-detail-card {
-          background-color: var(--bg-card, var(--bg-surface));
+          background-color: var(--bg-surface);
+          backdrop-filter: blur(12px);
           border: 1px solid var(--border-color);
-          border-radius: 16px;
+          border-radius: 20px;
           margin-bottom: 24px;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          box-shadow: var(--shadow-md);
           overflow: hidden;
           display: flex;
           flex-direction: column;
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .kanji-detail-card:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-lg), var(--shadow-glow);
+          border-color: rgba(59, 130, 246, 0.3);
         }
         .kanji-detail-header {
           display: flex;
           justify-content: space-between;
           align-items: center;
           padding: 12px 20px;
-          border-bottom: 1px solid var(--border-color);
+          border-bottom: 1px solid var(--border-light);
           background-color: rgba(255, 255, 255, 0.02);
         }
         .kanji-detail-body {
@@ -100,37 +107,43 @@ const KanjiList = () => {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding: 24px;
+          padding: 32px 24px;
           width: 100%;
-          border-bottom: 1px solid var(--border-color);
-          background-color: rgba(255, 255, 255, 0.01);
+          border-bottom: 1px solid var(--border-light);
+          background: radial-gradient(circle at center, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
         }
         @media (min-width: 768px) {
           .chugoc-section {
-            width: 240px;
+            width: 260px;
             border-bottom: none;
-            border-right: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-light);
             flex-shrink: 0;
           }
         }
         .kanji-main-char {
-          font-size: 5rem;
+          font-size: 5.5rem;
           line-height: 1;
-          color: var(--primary);
+          background: linear-gradient(135deg, #60A5FA, #3B82F6);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
           font-weight: bold;
-          margin-bottom: 8px;
-          transition: transform 0.2s;
+          margin-bottom: 12px;
+          transition: all 0.3s ease;
+          text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
         }
         .kanji-main-char:hover {
-          transform: scale(1.08);
+          transform: scale(1.1) rotate(2deg);
+          text-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
         }
         .kanji-sino-viet {
-          font-size: 1.25rem;
+          font-size: 1.35rem;
           font-weight: 800;
-          color: var(--han-viet-color, #dc2626);
+          background: linear-gradient(90deg, #F87171, #EF4444);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
           text-transform: uppercase;
-          margin-bottom: 16px;
-          letter-spacing: 0.1em;
+          margin-bottom: 20px;
+          letter-spacing: 0.15em;
         }
         .kanji-readings-row {
           display: flex;
@@ -139,11 +152,16 @@ const KanjiList = () => {
         }
         .reading-pill-box {
           flex: 1;
-          background-color: var(--bg-lighter);
+          background-color: rgba(255, 255, 255, 0.03);
           border: 1px solid var(--border-color);
-          border-radius: 8px;
-          padding: 6px;
+          border-radius: 12px;
+          padding: 8px 6px;
           text-align: center;
+          transition: all 0.2s;
+        }
+        .reading-pill-box:hover {
+          background-color: rgba(255, 255, 255, 0.06);
+          border-color: rgba(255, 255, 255, 0.15);
         }
         .reading-pill-label {
           font-size: 0.7rem;
@@ -154,7 +172,7 @@ const KanjiList = () => {
         .reading-pill-val {
           font-size: 0.95rem;
           font-weight: 600;
-          color: var(--text-main, white);
+          color: var(--text-main);
         }
         .vidu-section {
           flex: 1;
@@ -163,78 +181,70 @@ const KanjiList = () => {
           flex-direction: column;
         }
         .vidu-label {
-          font-size: 0.8rem;
+          font-size: 0.85rem;
           font-weight: bold;
-          color: var(--text-muted);
-          letter-spacing: 0.05em;
-          margin-bottom: 16px;
+          color: var(--primary);
+          letter-spacing: 0.1em;
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .vidu-label::before {
+          content: '';
+          display: block;
+          width: 8px;
+          height: 8px;
+          background-color: var(--primary);
+          border-radius: 50%;
+          box-shadow: 0 0 10px var(--primary);
         }
         .vidu-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 16px;
+          gap: 12px;
         }
-        @media (min-width: 640px) {
+        @media (min-width: 1024px) {
           .vidu-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
-        @media (min-width: 1024px) {
-          .vidu-grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
         .vidu-card {
-          background-color: var(--bg-lighter);
-          border: 1px solid var(--border-color);
+          background-color: rgba(255, 255, 255, 0.02);
+          border: 1px solid var(--border-light);
           border-radius: 12px;
           padding: 16px;
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-          transition: transform 0.2s, box-shadow 0.2s;
+          transition: all 0.2s ease;
         }
         .vidu-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          background-color: rgba(255, 255, 255, 0.05);
+          border-color: rgba(59, 130, 246, 0.3);
+          transform: translateX(4px);
         }
         .vidu-jp-row {
           display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 8px;
+          align-items: baseline;
+          gap: 12px;
+          margin-bottom: 8px;
         }
         .vidu-word {
-          font-size: 1.35rem;
-          font-weight: bold;
-          color: var(--example-word-color, #991b1b);
+          font-size: 1.4rem;
+          font-weight: 700;
+          color: var(--text-main);
         }
         .vidu-reading-badge {
-          background-color: rgba(59, 130, 246, 0.08);
-          color: var(--primary);
-          border: 1px solid rgba(59, 130, 246, 0.15);
-          border-radius: 6px;
-          padding: 2px 8px;
-          font-size: 0.75rem;
-          font-weight: 500;
+          background-color: var(--primary-focus);
+          color: var(--primary-hover);
+          padding: 4px 10px;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          border: 1px solid rgba(59, 130, 246, 0.2);
         }
         .vidu-meaning {
-          font-size: 0.9rem;
           color: var(--text-muted);
-          line-height: 1.4;
-        }
-        :root {
-          --example-word-color: #991b1b;
-          --han-viet-color: #b91c1c;
-        }
-        [data-theme='dark'] {
-          --example-word-color: #f87171;
-          --han-viet-color: #f87171;
-        }
-        .dark {
-          --example-word-color: #f87171;
-          --han-viet-color: #f87171;
+          font-size: 0.95rem;
+          line-height: 1.5;
         }
       `}</style>
       <div className="card-header" style={{flexDirection: 'column', alignItems: 'flex-start', gap: '16px'}}>

@@ -19,7 +19,8 @@ public class KanjiController {
 
     @GetMapping("/courses/{courseId}/kanjis")
     public ResponseEntity<List<Kanji>> getKanjisByCourse(@PathVariable String courseId) {
-        return ResponseEntity.ok(kanjiService.getKanjisByCourse(courseId));
+        List<Kanji> kanjis = kanjiService.getKanjisByCourse(courseId);
+        return ResponseEntity.ok(kanjis);
     }
 
     @GetMapping("/courses/{courseId}/kanjis/{kanjiId}")
